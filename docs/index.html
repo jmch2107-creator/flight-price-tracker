@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인천발 항공권 최저가 트래커</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0d1117;
+    --bg-card: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-dim: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --red: #f85149;
+    --yellow: #d29922;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Pretendard, "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 24px;
+    line-height: 1.5;
+  }
+  h1 { font-size: 1.5rem; margin-bottom: 4px; }
+  .subtitle { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 24px; }
+  .highlight-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .highlight-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    flex: 1 1 220px;
+    min-width: 200px;
+  }
+  .highlight-card .rank { color: var(--yellow); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; }
+  .highlight-card .route-name { font-size: 1.15rem; font-weight: 700; margin: 4px 0; }
+  .highlight-card .price { font-size: 1.3rem; font-weight: 700; color: var(--accent); }
+  .highlight-card .gap { font-size: 0.9rem; margin-top: 4px; }
+  .gap.zero { color: var(--green); }
+  .gap.nonzero { color: var(--text-dim); }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 36px;
+    font-size: 0.88rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  th, td {
+    padding: 8px 10px;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  th:nth-child(1), th:nth-child(2), td:nth-child(1), td:nth-child(2) { text-align: left; }
+  th {
+    background: #1c2129;
+    color: var(--text-dim);
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+  }
+  tr.region-head td {
+    background: #1c2129;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: left;
+  }
+  .table-wrap { overflow-x: auto; }
+  .conf { color: var(--text-dim); font-size: 0.78rem; }
+  .fail { color: var(--red); }
+  .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 20px;
+  }
+  .chart-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .chart-card h3 { margin: 0 0 8px 0; font-size: 0.95rem; }
+  .chart-card canvas { max-height: 240px; }
+  .region-section h2 {
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+    margin-top: 32px;
+  }
+  a { color: var(--accent); }
+  footer { color: var(--text-dim); font-size: 0.8rem; margin-top: 40px; }
+</style>
+</head>
+<body>
+
+<h1>✈️ 인천발 항공권 최저가 트래커</h1>
+<div class="subtitle" id="subtitle"></div>
+
+<div class="highlight-row" id="highlightRow"></div>
+
+<div class="table-wrap">
+  <table id="summaryTable">
+    <thead>
+      <tr>
+        <th>노선</th><th>여행기간</th><th>역대 최저가</th><th>오늘 조회가</th><th>최저가 대비</th><th>신뢰도</th><th>마지막 조회</th>
+      </tr>
+    </thead>
+    <tbody id="summaryBody"></tbody>
+  </table>
+</div>
+
+<div id="chartsByRegion"></div>
+
+<footer>
+  데이터 출처: 웹 검색 스니펫 / 항공권 비교 사이트 기반 추정치 (실시간 정밀가 아님, confidence: snippet_estimate). 매일 4회(09/12/18/00 KST) 자동 갱신.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const HISTORY = {"paris": {"name_ko": "파리", "region": "서유럽", "trip_length_days": 12, "lowest_price_krw": 1270400, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.traveloka.com/ko-kr/flight/route/Seoul-Paris.ICN.PARA", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 1270400, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "london": {"name_ko": "런던", "region": "서유럽", "trip_length_days": 12, "lowest_price_krw": 1103510, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/London-LON.ksp", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 1103510, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "amsterdam": {"name_ko": "암스테르담", "region": "서유럽", "trip_length_days": 12, "lowest_price_krw": 811898, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Amsterdam-Schiphol-AMS.ksp", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 811898, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "rome": {"name_ko": "로마", "region": "서유럽", "trip_length_days": 12, "lowest_price_krw": 1089919, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/로마-ROM", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 1089919, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "frankfurt": {"name_ko": "프랑크푸르트", "region": "서유럽", "trip_length_days": 12, "lowest_price_krw": 981600, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.threads.com/@gotsb_/post/DX5ebq3H17u/", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 981600, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "prague": {"name_ko": "프라하", "region": "동유럽", "trip_length_days": 12, "lowest_price_krw": 923046, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/체코-CZ0", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 923046, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "budapest": {"name_ko": "부다페스트", "region": "동유럽", "trip_length_days": 12, "lowest_price_krw": 1140275, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Budapest-Ferenc-Liszt-Intl-BUD.ksp", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 1140275, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "warsaw": {"name_ko": "바르샤바", "region": "동유럽", "trip_length_days": 12, "lowest_price_krw": 650995, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.kayak.co.kr/항공권/인천-국제-공항-ICN/바르샤바-WA1", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 650995, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "zagreb": {"name_ko": "자그레브", "region": "동유럽", "trip_length_days": 12, "lowest_price_krw": 1020880, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/자그레브-플레소공항-ZAG", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 1020880, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "hanoi": {"name_ko": "하노이", "region": "베트남", "trip_length_days": 5, "lowest_price_krw": 175051, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Hanoi-Noibai-HAN.ksp", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 175051, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "hcmc": {"name_ko": "호치민", "region": "베트남", "trip_length_days": 5, "lowest_price_krw": 231075, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Ho-Chi-Minh-City-SGN.ksp", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 231075, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "danang": {"name_ko": "다낭", "region": "베트남", "trip_length_days": 5, "lowest_price_krw": 316784, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.kayak.co.kr/항공권/대한민국-KR0/다낭국제공항-DAD", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 316784, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "jakarta": {"name_ko": "자카르타", "region": "인도네시아", "trip_length_days": 5, "lowest_price_krw": 183101, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Jakarta-JKT.ksp", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 183101, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "denpasar": {"name_ko": "덴파사르/발리", "region": "인도네시아", "trip_length_days": 5, "lowest_price_krw": 420361, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/발리-IDBA", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 420361, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "manila": {"name_ko": "마닐라", "region": "필리핀", "trip_length_days": 5, "lowest_price_krw": 290212, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/필리핀-PH0", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 290212, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "cebu": {"name_ko": "세부", "region": "필리핀", "trip_length_days": 5, "lowest_price_krw": 177287, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Cebu-City-Mactan-Intl-CEB.ksp", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 177287, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}, "okinawa": {"name_ko": "오키나와/나하", "region": "일본", "trip_length_days": 5, "lowest_price_krw": 271117, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.kayak.co.kr/항공권/대한민국-KR0/오키나와와-나하공항-OKA", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T16:53:00+09:00", "last_checked_price_krw": 271117, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0}};
+const SAMPLES = [{"ts": "2026-08-24T16:53:00+09:00", "route": "paris", "price_krw": 1270400, "confidence": "snippet_estimate", "source_url": "https://www.traveloka.com/ko-kr/flight/route/Seoul-Paris.ICN.PARA"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "london", "price_krw": 1103510, "confidence": "snippet_estimate", "source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/London-LON.ksp"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "amsterdam", "price_krw": 811898, "confidence": "snippet_estimate", "source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Amsterdam-Schiphol-AMS.ksp"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "rome", "price_krw": 1089919, "confidence": "snippet_estimate", "source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/로마-ROM"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "frankfurt", "price_krw": 981600, "confidence": "snippet_estimate", "source_url": "https://www.threads.com/@gotsb_/post/DX5ebq3H17u/"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "prague", "price_krw": 923046, "confidence": "snippet_estimate", "source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/체코-CZ0"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "budapest", "price_krw": 1140275, "confidence": "snippet_estimate", "source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Budapest-Ferenc-Liszt-Intl-BUD.ksp"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "warsaw", "price_krw": 650995, "confidence": "snippet_estimate", "source_url": "https://www.kayak.co.kr/항공권/인천-국제-공항-ICN/바르샤바-WA1"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "zagreb", "price_krw": 1020880, "confidence": "snippet_estimate", "source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/자그레브-플레소공항-ZAG"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "hanoi", "price_krw": 175051, "confidence": "snippet_estimate", "source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Hanoi-Noibai-HAN.ksp"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "hcmc", "price_krw": 231075, "confidence": "snippet_estimate", "source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Ho-Chi-Minh-City-SGN.ksp"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "danang", "price_krw": 316784, "confidence": "snippet_estimate", "source_url": "https://www.kayak.co.kr/항공권/대한민국-KR0/다낭국제공항-DAD"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "jakarta", "price_krw": 183101, "confidence": "snippet_estimate", "source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Jakarta-JKT.ksp"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "denpasar", "price_krw": 420361, "confidence": "snippet_estimate", "source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/발리-IDBA"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "manila", "price_krw": 290212, "confidence": "snippet_estimate", "source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/필리핀-PH0"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "cebu", "price_krw": 177287, "confidence": "snippet_estimate", "source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Cebu-City-Mactan-Intl-CEB.ksp"}, {"ts": "2026-08-24T16:53:00+09:00", "route": "okinawa", "price_krw": 271117, "confidence": "snippet_estimate", "source_url": "https://www.kayak.co.kr/항공권/대한민국-KR0/오키나와와-나하공항-OKA"}];
+const REGION_ORDER = ["서유럽", "동유럽", "베트남", "인도네시아", "필리핀", "일본"];
+
+function fmtKrw(n) {
+  if (n === null || n === undefined) return "-";
+  return n.toLocaleString("ko-KR") + "원";
+}
+function fmtDate(iso) {
+  if (!iso) return "-";
+  return iso.replace("T", " ").slice(0, 16);
+}
+
+document.getElementById("subtitle").textContent =
+  "총 " + Object.keys(HISTORY).length + "개 노선 · 마지막 대시보드 생성: " +
+  new Date().toISOString().replace("T", " ").slice(0, 16) + " UTC";
+
+// ---- Top 3 closest to record ----
+const withGap = Object.entries(HISTORY)
+  .filter(([k, v]) => v.gap_to_record_pct !== null && v.gap_to_record_pct !== undefined)
+  .sort((a, b) => a[1].gap_to_record_pct - b[1].gap_to_record_pct)
+  .slice(0, 3);
+
+const highlightRow = document.getElementById("highlightRow");
+withGap.forEach(([key, v], i) => {
+  const div = document.createElement("div");
+  div.className = "highlight-card";
+  const gapClass = v.gap_to_record_pct === 0 ? "zero" : "nonzero";
+  const gapText = v.gap_to_record_pct === 0 ? "🔥 역대 최저가 경신/타이" : ("최저가 대비 +" + v.gap_to_record_pct + "%");
+  div.innerHTML =
+    '<div class="rank">TOP ' + (i + 1) + '</div>' +
+    '<div class="route-name">' + v.name_ko + ' <span style="color:var(--text-dim);font-weight:400;font-size:0.8rem">(' + v.region + ')</span></div>' +
+    '<div class="price">' + fmtKrw(v.last_checked_price_krw) + '</div>' +
+    '<div class="gap ' + gapClass + '">' + gapText + '</div>';
+  highlightRow.appendChild(div);
+});
+
+// ---- Summary table ----
+const tbody = document.getElementById("summaryBody");
+REGION_ORDER.forEach(region => {
+  const entries = Object.entries(HISTORY).filter(([k, v]) => v.region === region);
+  if (entries.length === 0) return;
+  const headTr = document.createElement("tr");
+  headTr.className = "region-head";
+  headTr.innerHTML = '<td colspan="7">' + region + '</td>';
+  tbody.appendChild(headTr);
+
+  entries.sort((a, b) => (a[1].gap_to_record_pct ?? 999) - (b[1].gap_to_record_pct ?? 999));
+  entries.forEach(([key, v]) => {
+    const tr = document.createElement("tr");
+    const gapCell = v.gap_to_record_pct === null || v.gap_to_record_pct === undefined
+      ? '<span class="fail">조회 실패</span>'
+      : (v.gap_to_record_pct === 0 ? '<span class="gap zero">신기록</span>' : ('+' + v.gap_to_record_pct + '%'));
+    tr.innerHTML =
+      '<td>' + v.name_ko + '</td>' +
+      '<td>' + v.trip_length_days + '박' + (v.trip_length_days + 1) + '일</td>' +
+      '<td>' + (v.lowest_source_url ? '<a href="' + v.lowest_source_url + '" target="_blank" rel="noopener">' + fmtKrw(v.lowest_price_krw) + '</a>' : fmtKrw(v.lowest_price_krw)) + '</td>' +
+      '<td>' + fmtKrw(v.last_checked_price_krw) + '</td>' +
+      '<td>' + gapCell + '</td>' +
+      '<td class="conf">' + (v.last_checked_confidence || '-') + '</td>' +
+      '<td>' + fmtDate(v.last_checked_at) + '</td>';
+    tbody.appendChild(tr);
+  });
+});
+
+// ---- Charts by region ----
+const container = document.getElementById("chartsByRegion");
+const palette = ["#58a6ff", "#3fb950", "#d29922", "#f85149", "#bc8cff", "#39c5cf", "#f778ba", "#ffa657", "#79c0ff"];
+
+REGION_ORDER.forEach(region => {
+  const routesInRegion = Object.entries(HISTORY).filter(([k, v]) => v.region === region).map(([k]) => k);
+  if (routesInRegion.length === 0) return;
+
+  const section = document.createElement("div");
+  section.className = "region-section";
+  section.innerHTML = '<h2>' + region + '</h2>';
+  const grid = document.createElement("div");
+  grid.className = "charts-grid";
+  section.appendChild(grid);
+  container.appendChild(section);
+
+  routesInRegion.forEach((routeKey, idx) => {
+    const meta = HISTORY[routeKey];
+    const routeSamples = SAMPLES.filter(s => s.route === routeKey).sort((a, b) => a.ts.localeCompare(b.ts));
+
+    const card = document.createElement("div");
+    card.className = "chart-card";
+    const canvasId = "chart_" + routeKey;
+    card.innerHTML = '<h3>' + meta.name_ko + '</h3><canvas id="' + canvasId + '"></canvas>';
+    grid.appendChild(card);
+
+    const ctx = document.getElementById(canvasId).getContext("2d");
+    const color = palette[idx % palette.length];
+
+    new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: routeSamples.map(s => fmtDate(s.ts)),
+        datasets: [
+          {
+            label: meta.name_ko + " 조회가",
+            data: routeSamples.map(s => s.price_krw),
+            borderColor: color,
+            backgroundColor: color + "33",
+            tension: 0.2,
+            pointRadius: 3,
+            fill: false,
+          },
+          {
+            label: "역대 최저가",
+            data: routeSamples.map(() => meta.lowest_price_krw),
+            borderColor: "#8b949e",
+            borderDash: [6, 4],
+            pointRadius: 0,
+            fill: false,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { labels: { color: "#c9d1d9", font: { size: 10 } } },
+        },
+        scales: {
+          x: { ticks: { color: "#8b949e", font: { size: 9 } }, grid: { color: "#30363d" } },
+          y: { ticks: { color: "#8b949e", callback: v => (v / 10000) + "만" }, grid: { color: "#30363d" } },
+        },
+      },
+    });
+  });
+});
+</script>
+</body>
+</html>
