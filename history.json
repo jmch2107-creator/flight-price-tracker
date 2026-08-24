@@ -7,10 +7,13 @@
     "lowest_seen_at": "2026-08-24T16:53:00+09:00",
     "lowest_source_url": "https://www.traveloka.com/ko-kr/flight/route/Seoul-Paris.ICN.PARA",
     "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
     "last_checked_price_krw": 1270400,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 0.0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-13",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Paris%20on%20June%201%202027%20returning%20June%2013%202027"
   },
   "london": {
     "name_ko": "런던",
@@ -20,10 +23,13 @@
     "lowest_seen_at": "2026-08-24T16:53:00+09:00",
     "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/London-LON.ksp",
     "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
     "last_checked_price_krw": 1103510,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 0.0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-13",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20London%20on%20June%201%202027%20returning%20June%2013%202027"
   },
   "amsterdam": {
     "name_ko": "암스테르담",
@@ -33,49 +39,61 @@
     "lowest_seen_at": "2026-08-24T16:53:00+09:00",
     "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Amsterdam-Schiphol-AMS.ksp",
     "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
     "last_checked_price_krw": 811898,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 0.0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-13",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Amsterdam%20on%20June%201%202027%20returning%20June%2013%202027"
   },
   "rome": {
     "name_ko": "로마",
     "region": "서유럽",
     "trip_length_days": 12,
-    "lowest_price_krw": 1089919,
-    "lowest_seen_at": "2026-08-24T16:53:00+09:00",
-    "lowest_source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/로마-ROM",
-    "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
-    "last_checked_price_krw": 1089919,
+    "lowest_price_krw": 657454,
+    "lowest_seen_at": "2026-08-24T17:09:44+09:00",
+    "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Rome-ROM.ksp",
+    "lowest_travel_dates": "2027-06-01~2027-06-13",
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
+    "last_checked_price_krw": 657454,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-13",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Rome%20on%20June%201%202027%20returning%20June%2013%202027"
   },
   "frankfurt": {
     "name_ko": "프랑크푸르트",
     "region": "서유럽",
     "trip_length_days": 12,
-    "lowest_price_krw": 981600,
-    "lowest_seen_at": "2026-08-24T16:53:00+09:00",
-    "lowest_source_url": "https://www.threads.com/@gotsb_/post/DX5ebq3H17u/",
-    "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
-    "last_checked_price_krw": 981600,
+    "lowest_price_krw": 734607,
+    "lowest_seen_at": "2026-08-24T17:09:44+09:00",
+    "lowest_source_url": "https://flights.stubbyplanner.com/to/frankfurt",
+    "lowest_travel_dates": "2027-06-01~2027-06-13",
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
+    "last_checked_price_krw": 734607,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-13",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Frankfurt%20on%20June%201%202027%20returning%20June%2013%202027"
   },
   "prague": {
     "name_ko": "프라하",
     "region": "동유럽",
     "trip_length_days": 12,
-    "lowest_price_krw": 923046,
-    "lowest_seen_at": "2026-08-24T16:53:00+09:00",
-    "lowest_source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/체코-CZ0",
-    "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
-    "last_checked_price_krw": 923046,
+    "lowest_price_krw": 795501,
+    "lowest_seen_at": "2026-08-24T17:09:44+09:00",
+    "lowest_source_url": "https://www.kayak.co.kr/항공권/대한민국-KR0/프라하-바츨라프하벨국제공항-PRG",
+    "lowest_travel_dates": "2027-06-01~2027-06-13",
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
+    "last_checked_price_krw": 795501,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-13",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Prague%20on%20June%201%202027%20returning%20June%2013%202027"
   },
   "budapest": {
     "name_ko": "부다페스트",
@@ -85,10 +103,13 @@
     "lowest_seen_at": "2026-08-24T16:53:00+09:00",
     "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Budapest-Ferenc-Liszt-Intl-BUD.ksp",
     "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
     "last_checked_price_krw": 1140275,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 0.0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-13",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Budapest%20on%20June%201%202027%20returning%20June%2013%202027"
   },
   "warsaw": {
     "name_ko": "바르샤바",
@@ -98,23 +119,29 @@
     "lowest_seen_at": "2026-08-24T16:53:00+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/항공권/인천-국제-공항-ICN/바르샤바-WA1",
     "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
-    "last_checked_price_krw": 650995,
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
+    "last_checked_price_krw": 1145921,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 76.0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-13",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Warsaw%20on%20June%201%202027%20returning%20June%2013%202027"
   },
   "zagreb": {
     "name_ko": "자그레브",
     "region": "동유럽",
     "trip_length_days": 12,
-    "lowest_price_krw": 1020880,
-    "lowest_seen_at": "2026-08-24T16:53:00+09:00",
-    "lowest_source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/자그레브-플레소공항-ZAG",
-    "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
-    "last_checked_price_krw": 1020880,
+    "lowest_price_krw": 930840,
+    "lowest_seen_at": "2026-08-24T17:09:44+09:00",
+    "lowest_source_url": "https://ko.skyticket.com/incheon_international_airport-zagreb_airport/",
+    "lowest_travel_dates": "2027-06-01~2027-06-13",
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
+    "last_checked_price_krw": 930840,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-13",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Zagreb%20on%20June%201%202027%20returning%20June%2013%202027"
   },
   "hanoi": {
     "name_ko": "하노이",
@@ -124,10 +151,13 @@
     "lowest_seen_at": "2026-08-24T16:53:00+09:00",
     "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Hanoi-Noibai-HAN.ksp",
     "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
-    "last_checked_price_krw": 175051,
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
+    "last_checked_price_krw": 310500,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 77.4,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-06",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Hanoi%20on%20June%201%202027%20returning%20June%206%202027"
   },
   "hcmc": {
     "name_ko": "호치민",
@@ -137,23 +167,29 @@
     "lowest_seen_at": "2026-08-24T16:53:00+09:00",
     "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Ho-Chi-Minh-City-SGN.ksp",
     "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
-    "last_checked_price_krw": 231075,
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
+    "last_checked_price_krw": 239200,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 3.5,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-06",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Ho%20Chi%20Minh%20City%20on%20June%201%202027%20returning%20June%206%202027"
   },
   "danang": {
     "name_ko": "다낭",
     "region": "베트남",
     "trip_length_days": 5,
-    "lowest_price_krw": 316784,
-    "lowest_seen_at": "2026-08-24T16:53:00+09:00",
-    "lowest_source_url": "https://www.kayak.co.kr/항공권/대한민국-KR0/다낭국제공항-DAD",
-    "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
-    "last_checked_price_krw": 316784,
+    "lowest_price_krw": 288288,
+    "lowest_seen_at": "2026-08-24T17:09:44+09:00",
+    "lowest_source_url": "https://flights.stubbyplanner.com/to/danang",
+    "lowest_travel_dates": "2027-06-01~2027-06-06",
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
+    "last_checked_price_krw": 288288,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-06",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Da%20Nang%20on%20June%201%202027%20returning%20June%206%202027"
   },
   "jakarta": {
     "name_ko": "자카르타",
@@ -163,10 +199,13 @@
     "lowest_seen_at": "2026-08-24T16:53:00+09:00",
     "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Jakarta-JKT.ksp",
     "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
-    "last_checked_price_krw": 183101,
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
+    "last_checked_price_krw": 290343,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 58.6,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-06",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Jakarta%20on%20June%201%202027%20returning%20June%206%202027"
   },
   "denpasar": {
     "name_ko": "덴파사르/발리",
@@ -176,10 +215,13 @@
     "lowest_seen_at": "2026-08-24T16:53:00+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/발리-IDBA",
     "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
     "last_checked_price_krw": 420361,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 0.0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-06",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Denpasar%20Bali%20on%20June%201%202027%20returning%20June%206%202027"
   },
   "manila": {
     "name_ko": "마닐라",
@@ -189,10 +231,13 @@
     "lowest_seen_at": "2026-08-24T16:53:00+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/필리핀-PH0",
     "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
     "last_checked_price_krw": 290212,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 0.0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-06",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Manila%20on%20June%201%202027%20returning%20June%206%202027"
   },
   "cebu": {
     "name_ko": "세부",
@@ -202,10 +247,13 @@
     "lowest_seen_at": "2026-08-24T16:53:00+09:00",
     "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Cebu-City-Mactan-Intl-CEB.ksp",
     "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
     "last_checked_price_krw": 177287,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 0.0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-06",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Cebu%20on%20June%201%202027%20returning%20June%206%202027"
   },
   "okinawa": {
     "name_ko": "오키나와/나하",
@@ -215,9 +263,12 @@
     "lowest_seen_at": "2026-08-24T16:53:00+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/항공권/대한민국-KR0/오키나와와-나하공항-OKA",
     "lowest_travel_dates": null,
-    "last_checked_at": "2026-08-24T16:53:00+09:00",
+    "last_checked_at": "2026-08-24T17:09:44+09:00",
     "last_checked_price_krw": 271117,
     "last_checked_confidence": "snippet_estimate",
-    "gap_to_record_pct": 0
+    "gap_to_record_pct": 0.0,
+    "outbound_date": "2027-06-01",
+    "return_date": "2027-06-06",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Okinawa%20on%20June%201%202027%20returning%20June%206%202027"
   }
 }
