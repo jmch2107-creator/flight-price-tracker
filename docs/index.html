@@ -4,357 +4,361 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>인천발 항공권 최저가 트래커</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 <style>
   :root {
-    --bg: #0d1117;
-    --surface: #161b22;
-    --surface-2: #1c2128;
-    --border: rgba(255,255,255,0.10);
-    --text-primary: #f0f6fc;
-    --text-secondary: #c9d1d9;
-    --text-muted: #8b949e;
-    --accent: #58a6ff;
-    --good: #3fb950;
-    --warn: #d29922;
+    --bg: #0f1115;
+    --panel: #171a21;
+    --panel-border: #262b36;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --accent: #4f9dff;
+    --good: #35d488;
+    --warn: #ff6b6b;
+    --hl: #2a3550;
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0;
     background: var(--bg);
-    color: var(--text-primary);
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-    padding: 24px 16px 64px;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Pretendard, "Noto Sans KR", Arial, sans-serif;
+    margin: 0;
+    padding: 24px;
   }
-  .wrap { max-width: 1200px; margin: 0 auto; }
-  h1 { font-size: 1.6rem; margin: 0 0 4px; }
-  .subtitle { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px; }
-  h2 { font-size: 1.15rem; margin: 40px 0 12px; color: var(--text-primary); border-left: 4px solid var(--accent); padding-left: 10px; }
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 16px;
-  }
-  .top3 {
-    background: linear-gradient(135deg, rgba(63,185,80,0.12), rgba(88,166,255,0.08));
-    border: 1px solid rgba(63,185,80,0.35);
-    border-radius: 10px;
-    padding: 16px 20px;
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    padding: 20px;
     margin-bottom: 24px;
   }
-  .top3 h2 { margin-top: 0; border: none; padding-left: 0; color: var(--good); }
-  .top3-list { margin: 8px 0 0; padding-left: 20px; line-height: 1.8; }
-  table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
-  th, td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
-  th { color: var(--text-muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; position: sticky; top: 0; background: var(--surface); }
-  td.num { text-align: right; }
-  td.mono { font-variant-numeric: tabular-nums; color: var(--text-secondary); }
-  td.small { font-size: 0.78rem; color: var(--text-muted); }
-  td.route-name { font-weight: 600; }
-  .region-cell {
-    font-weight: 700;
-    color: var(--region-color);
-    border-left: 3px solid var(--region-color);
+  .panel h2 { font-size: 16px; margin-top: 0; margin-bottom: 12px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
   }
-  tr.row-highlight { background: rgba(63,185,80,0.08); }
-  .gap-zero { color: var(--good); font-weight: 700; }
-  .gap-low { color: var(--warn); font-weight: 600; }
-  .book-btn {
-    display: inline-block;
-    padding: 5px 12px;
-    background: var(--accent);
-    color: #04101f;
-    font-weight: 600;
-    font-size: 0.8rem;
-    border-radius: 6px;
-    text-decoration: none;
+  th, td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--panel-border);
     white-space: nowrap;
   }
-  .book-btn:hover { background: #79b8ff; }
-  .table-scroll { overflow-x: auto; }
-  .charts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; }
-  .chart-box { position: relative; height: 300px; }
-  .region-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
-  footer { margin-top: 40px; color: var(--text-muted); font-size: 0.78rem; text-align: center; }
+  th { color: var(--muted); font-weight: 600; position: sticky; top: 0; background: var(--panel); }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.small { color: var(--muted); font-size: 11px; }
+  tr.hl-row { background: var(--hl); }
+  td.gap-zero { color: var(--good); font-weight: 700; }
+  td.gap-warn { color: var(--warn); }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #08111f;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .table-wrap { overflow-x: auto; }
+  .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 16px;
+  }
+  .chart-box { background: var(--panel); border: 1px solid var(--panel-border); border-radius: 12px; padding: 14px; }
+  .chart-box h3 { font-size: 13px; margin: 0 0 8px 0; color: var(--muted); }
+  canvas { max-height: 220px; }
+  .legend-note { color: var(--muted); font-size: 12px; margin-top: 8px; }
+  footer { color: var(--muted); font-size: 12px; text-align: center; margin-top: 32px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>✈️ 인천발 항공권 최저가 트래커</h1>
-  <div class="subtitle">17개 노선 · 2027-06 ~ 2029-06 여행 기준 · 마지막 갱신: 2026-08-24T17:09:44+09:00 (KST)</div>
+  <h1>✈️ 인천발(ICN) 항공권 최저가 트래커</h1>
+  <div class="subtitle">마지막 갱신: 2026-08-24T17:29:00+09:00 (KST) · 총 17개 노선 추적 중 · 여행기준 2027-06 ~ 2029-06</div>
 
-  <div class='top3'><h2>🏆 역대최저가에 가장 근접한 노선 TOP 3</h2><ul class='top3-list'><li><strong>런던</strong> (서유럽) — 오늘 ₩1,103,510, 역대최저 ₩1,103,510 대비 <strong>0.0%</strong></li><li><strong>파리</strong> (서유럽) — 오늘 ₩1,270,400, 역대최저 ₩1,270,400 대비 <strong>0.0%</strong></li><li><strong>암스테르담</strong> (서유럽) — 오늘 ₩811,898, 역대최저 ₩811,898 대비 <strong>0.0%</strong></li></ul></div>
-
-  <h2>요약 테이블</h2>
-  <div class="card table-scroll">
+  <div class="panel">
+    <h2>노선 요약 (gap% 최소 3개 강조)</h2>
+    <div class="table-wrap">
     <table>
       <thead>
         <tr>
-          <th>지역</th><th>노선명</th><th>출발일</th><th>귀국일</th>
-          <th>역대최저가</th><th>오늘조회가</th><th>gap%</th><th>마지막조회시각</th><th>예약</th>
+          <th>지역</th><th>노선</th><th>출발일</th><th>귀국일</th>
+          <th>역대 최저가</th><th>오늘 조회가</th><th>gap%</th><th>마지막 조회</th><th>예약</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="row-highlight">
-      <td class="region-cell" rowspan="5" style="--region-color:#3987e5">서유럽</td>
-      <td class="route-name">파리</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-13</td>
-      <td class="mono num">₩1,270,400</td>
-      <td class="mono num">₩1,270,400</td>
-      <td class="mono num gap-zero">0.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Paris%20on%20June%201%202027%20returning%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="row-highlight">
-      
-      <td class="route-name">런던</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-13</td>
-      <td class="mono num">₩1,103,510</td>
-      <td class="mono num">₩1,103,510</td>
-      <td class="mono num gap-zero">0.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20London%20on%20June%201%202027%20returning%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="row-highlight">
-      
-      <td class="route-name">암스테르담</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-13</td>
-      <td class="mono num">₩811,898</td>
-      <td class="mono num">₩811,898</td>
-      <td class="mono num gap-zero">0.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Amsterdam%20on%20June%201%202027%20returning%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      
-      <td class="route-name">로마</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-13</td>
-      <td class="mono num">₩657,454</td>
-      <td class="mono num">₩657,454</td>
-      <td class="mono num gap-zero">0.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Rome%20on%20June%201%202027%20returning%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      
-      <td class="route-name">프랑크푸르트</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-13</td>
-      <td class="mono num">₩734,607</td>
-      <td class="mono num">₩734,607</td>
-      <td class="mono num gap-zero">0.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Frankfurt%20on%20June%201%202027%20returning%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      <td class="region-cell" rowspan="4" style="--region-color:#d95926">동유럽</td>
-      <td class="route-name">프라하</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-13</td>
-      <td class="mono num">₩795,501</td>
-      <td class="mono num">₩795,501</td>
-      <td class="mono num gap-zero">0.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Prague%20on%20June%201%202027%20returning%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      
-      <td class="route-name">부다페스트</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-13</td>
-      <td class="mono num">₩1,140,275</td>
-      <td class="mono num">₩1,140,275</td>
-      <td class="mono num gap-zero">0.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Budapest%20on%20June%201%202027%20returning%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      
-      <td class="route-name">바르샤바</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-13</td>
-      <td class="mono num">₩650,995</td>
-      <td class="mono num">₩1,145,921</td>
-      <td class="mono num ">76.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Warsaw%20on%20June%201%202027%20returning%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      
-      <td class="route-name">자그레브</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-13</td>
-      <td class="mono num">₩930,840</td>
-      <td class="mono num">₩930,840</td>
-      <td class="mono num gap-zero">0.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Zagreb%20on%20June%201%202027%20returning%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      <td class="region-cell" rowspan="3" style="--region-color:#199e70">베트남</td>
-      <td class="route-name">하노이</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-06</td>
-      <td class="mono num">₩175,051</td>
-      <td class="mono num">₩310,500</td>
-      <td class="mono num ">77.4%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Hanoi%20on%20June%201%202027%20returning%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      
-      <td class="route-name">호치민</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-06</td>
-      <td class="mono num">₩231,075</td>
-      <td class="mono num">₩239,200</td>
-      <td class="mono num gap-low">3.5%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Ho%20Chi%20Minh%20City%20on%20June%201%202027%20returning%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      
-      <td class="route-name">다낭</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-06</td>
-      <td class="mono num">₩288,288</td>
-      <td class="mono num">₩288,288</td>
-      <td class="mono num gap-zero">0.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Da%20Nang%20on%20June%201%202027%20returning%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      <td class="region-cell" rowspan="2" style="--region-color:#c98500">인도네시아</td>
-      <td class="route-name">자카르타</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-06</td>
-      <td class="mono num">₩183,101</td>
-      <td class="mono num">₩290,343</td>
-      <td class="mono num ">58.6%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Jakarta%20on%20June%201%202027%20returning%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      
-      <td class="route-name">덴파사르/발리</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-06</td>
-      <td class="mono num">₩420,361</td>
-      <td class="mono num">₩420,361</td>
-      <td class="mono num gap-zero">0.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Denpasar%20Bali%20on%20June%201%202027%20returning%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      <td class="region-cell" rowspan="2" style="--region-color:#d55181">필리핀</td>
-      <td class="route-name">마닐라</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-06</td>
-      <td class="mono num">₩290,212</td>
-      <td class="mono num">₩290,212</td>
-      <td class="mono num gap-zero">0.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Manila%20on%20June%201%202027%20returning%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      
-      <td class="route-name">세부</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-06</td>
-      <td class="mono num">₩177,287</td>
-      <td class="mono num">₩177,287</td>
-      <td class="mono num gap-zero">0.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Cebu%20on%20June%201%202027%20returning%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
-<tr class="">
-      <td class="region-cell" rowspan="1" style="--region-color:#008300">일본</td>
-      <td class="route-name">오키나와/나하</td>
-      <td class="mono">2027-06-01</td>
-      <td class="mono">2027-06-06</td>
-      <td class="mono num">₩271,117</td>
-      <td class="mono num">₩271,117</td>
-      <td class="mono num gap-zero">0.0%</td>
-      <td class="mono small">2026-08-24T17:09:44+09:00</td>
-      <td><a class="book-btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Okinawa%20on%20June%201%202027%20returning%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
-    </tr>
+        
+        <tr class="hl-row">
+          <td>서유럽</td>
+          <td>파리</td>
+          <td>2027-06-01</td>
+          <td>2027-06-13</td>
+          <td class="num">1,270,400원</td>
+          <td class="num">1,270,400원</td>
+          <td class="num gap-zero">+0.0%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Paris%20June%201%202027%20to%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr class="hl-row">
+          <td>서유럽</td>
+          <td>런던</td>
+          <td>2027-06-01</td>
+          <td>2027-06-13</td>
+          <td class="num">1,103,510원</td>
+          <td class="num">1,103,510원</td>
+          <td class="num gap-zero">+0.0%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20London%20June%201%202027%20to%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr class="hl-row">
+          <td>서유럽</td>
+          <td>암스테르담</td>
+          <td>2027-06-01</td>
+          <td>2027-06-13</td>
+          <td class="num">811,898원</td>
+          <td class="num">811,898원</td>
+          <td class="num gap-zero">+0.0%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Amsterdam%20June%201%202027%20to%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>서유럽</td>
+          <td>로마</td>
+          <td>2027-06-01</td>
+          <td>2027-06-13</td>
+          <td class="num">657,454원</td>
+          <td class="num">673,400원</td>
+          <td class="num ">+2.4%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Rome%20June%201%202027%20to%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>서유럽</td>
+          <td>프랑크푸르트</td>
+          <td>2027-06-01</td>
+          <td>2027-06-13</td>
+          <td class="num">734,607원</td>
+          <td class="num">853,767원</td>
+          <td class="num ">+16.2%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Frankfurt%20June%201%202027%20to%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>동유럽</td>
+          <td>프라하</td>
+          <td>2027-06-01</td>
+          <td>2027-06-13</td>
+          <td class="num">795,501원</td>
+          <td class="num">839,538원</td>
+          <td class="num ">+5.5%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Prague%20June%201%202027%20to%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>동유럽</td>
+          <td>부다페스트</td>
+          <td>2027-06-01</td>
+          <td>2027-06-13</td>
+          <td class="num">636,603원</td>
+          <td class="num">636,603원</td>
+          <td class="num gap-zero">+0.0%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Budapest%20June%201%202027%20to%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>동유럽</td>
+          <td>바르샤바</td>
+          <td>2027-06-01</td>
+          <td>2027-06-13</td>
+          <td class="num">650,995원</td>
+          <td class="num">1,145,921원</td>
+          <td class="num gap-warn">+76.0%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Warsaw%20June%201%202027%20to%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>동유럽</td>
+          <td>자그레브</td>
+          <td>2027-06-01</td>
+          <td>2027-06-13</td>
+          <td class="num">930,840원</td>
+          <td class="num">930,840원</td>
+          <td class="num gap-zero">+0.0%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Zagreb%20June%201%202027%20to%20June%2013%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>베트남</td>
+          <td>하노이</td>
+          <td>2027-06-01</td>
+          <td>2027-06-06</td>
+          <td class="num">175,051원</td>
+          <td class="num">285,502원</td>
+          <td class="num gap-warn">+63.1%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Hanoi%20June%201%202027%20to%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>베트남</td>
+          <td>호치민</td>
+          <td>2027-06-01</td>
+          <td>2027-06-06</td>
+          <td class="num">231,075원</td>
+          <td class="num">309,964원</td>
+          <td class="num ">+34.1%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Ho%20Chi%20Minh%20City%20June%201%202027%20to%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>베트남</td>
+          <td>다낭</td>
+          <td>2027-06-01</td>
+          <td>2027-06-06</td>
+          <td class="num">288,288원</td>
+          <td class="num">327,535원</td>
+          <td class="num ">+13.6%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Da%20Nang%20June%201%202027%20to%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>인도네시아</td>
+          <td>자카르타</td>
+          <td>2027-06-01</td>
+          <td>2027-06-06</td>
+          <td class="num">183,101원</td>
+          <td class="num">290,343원</td>
+          <td class="num gap-warn">+58.6%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Jakarta%20June%201%202027%20to%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>인도네시아</td>
+          <td>덴파사르/발리</td>
+          <td>2027-06-01</td>
+          <td>2027-06-06</td>
+          <td class="num">420,361원</td>
+          <td class="num">748,049원</td>
+          <td class="num gap-warn">+78.0%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Denpasar%20Bali%20June%201%202027%20to%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>필리핀</td>
+          <td>마닐라</td>
+          <td>2027-06-01</td>
+          <td>2027-06-06</td>
+          <td class="num">187,005원</td>
+          <td class="num">187,005원</td>
+          <td class="num gap-zero">+0.0%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Manila%20June%201%202027%20to%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>필리핀</td>
+          <td>세부</td>
+          <td>2027-06-01</td>
+          <td>2027-06-06</td>
+          <td class="num">167,484원</td>
+          <td class="num">167,484원</td>
+          <td class="num gap-zero">+0.0%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Cebu%20June%201%202027%20to%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
+        <tr>
+          <td>일본</td>
+          <td>오키나와/나하</td>
+          <td>2027-06-01</td>
+          <td>2027-06-06</td>
+          <td class="num">135,558원</td>
+          <td class="num">135,558원</td>
+          <td class="num gap-zero">+0.0%</td>
+          <td class="small">2026-08-24T17:29:00+09:00</td>
+          <td><a class="btn" href="https://www.google.com/travel/flights?hl=ko&amp;gl=KR&amp;curr=KRW&amp;q=Flights%20from%20Incheon%20to%20Okinawa%20June%201%202027%20to%20June%206%202027" target="_blank" rel="noopener">예약하기</a></td>
+        </tr>
       </tbody>
     </table>
+    </div>
+    <div class="legend-note">gap% = (오늘 조회가 - 역대 최저가) / 역대 최저가 × 100. 0%는 역대 최저가와 동일(신기록 포함).</div>
   </div>
 
-  <h2>지역별 가격 추이</h2>
-  <div class="charts-grid" id="charts"></div>
+  <div class="panel">
+    <h2>지역별 노선 가격 추이</h2>
+    <div class="charts-grid" id="chartsGrid"></div>
+  </div>
 
-  <footer>가격은 웹 검색 스니펫 기반 추정치(snippet_estimate)이며 실제 예약가와 다를 수 있습니다. 데이터는 매 실행마다 누적됩니다.</footer>
-</div>
+  <footer>flight-price-tracker · 자동 수집 (WebSearch 스니펫 기반 추정치, confidence: snippet_estimate)</footer>
 
 <script>
-const chartsData = {"서유럽": [{"label": "파리", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 1270400}, {"x": "2026-08-24T17:09:44+09:00", "y": 1270400}]}, {"label": "런던", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 1103510}, {"x": "2026-08-24T17:09:44+09:00", "y": 1103510}]}, {"label": "암스테르담", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 811898}, {"x": "2026-08-24T17:09:44+09:00", "y": 811898}]}, {"label": "로마", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 1089919}, {"x": "2026-08-24T17:09:44+09:00", "y": 657454}]}, {"label": "프랑크푸르트", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 981600}, {"x": "2026-08-24T17:09:44+09:00", "y": 734607}]}], "동유럽": [{"label": "프라하", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 923046}, {"x": "2026-08-24T17:09:44+09:00", "y": 795501}]}, {"label": "부다페스트", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 1140275}, {"x": "2026-08-24T17:09:44+09:00", "y": 1140275}]}, {"label": "바르샤바", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 650995}, {"x": "2026-08-24T17:09:44+09:00", "y": 1145921}]}, {"label": "자그레브", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 1020880}, {"x": "2026-08-24T17:09:44+09:00", "y": 930840}]}], "베트남": [{"label": "하노이", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 175051}, {"x": "2026-08-24T17:09:44+09:00", "y": 310500}]}, {"label": "호치민", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 231075}, {"x": "2026-08-24T17:09:44+09:00", "y": 239200}]}, {"label": "다낭", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 316784}, {"x": "2026-08-24T17:09:44+09:00", "y": 288288}]}], "인도네시아": [{"label": "자카르타", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 183101}, {"x": "2026-08-24T17:09:44+09:00", "y": 290343}]}, {"label": "덴파사르/발리", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 420361}, {"x": "2026-08-24T17:09:44+09:00", "y": 420361}]}], "필리핀": [{"label": "마닐라", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 290212}, {"x": "2026-08-24T17:09:44+09:00", "y": 290212}]}, {"label": "세부", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 177287}, {"x": "2026-08-24T17:09:44+09:00", "y": 177287}]}], "일본": [{"label": "오키나와/나하", "data": [{"x": "2026-08-24T16:53:00+09:00", "y": 271117}, {"x": "2026-08-24T17:09:44+09:00", "y": 271117}]}]};
-const regionColors = {"서유럽": "#3987e5", "동유럽": "#d95926", "베트남": "#199e70", "인도네시아": "#c98500", "필리핀": "#d55181", "일본": "#008300"};
-const seriesPalette = ["#3987e5", "#d95926", "#199e70", "#c98500", "#d55181", "#008300", "#9085e9", "#e66767"];
+const DATA = {"history": {"paris": {"name_ko": "파리", "region": "서유럽", "trip_length_days": 12, "lowest_price_krw": 1270400, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.traveloka.com/ko-kr/flight/route/Seoul-Paris.ICN.PARA", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 1270400, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0.0, "outbound_date": "2027-06-01", "return_date": "2027-06-13", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Paris%20June%201%202027%20to%20June%2013%202027"}, "london": {"name_ko": "런던", "region": "서유럽", "trip_length_days": 12, "lowest_price_krw": 1103510, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/London-LON.ksp", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 1103510, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0.0, "outbound_date": "2027-06-01", "return_date": "2027-06-13", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20London%20June%201%202027%20to%20June%2013%202027"}, "amsterdam": {"name_ko": "암스테르담", "region": "서유럽", "trip_length_days": 12, "lowest_price_krw": 811898, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Amsterdam-Schiphol-AMS.ksp", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 811898, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0.0, "outbound_date": "2027-06-01", "return_date": "2027-06-13", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Amsterdam%20June%201%202027%20to%20June%2013%202027"}, "rome": {"name_ko": "로마", "region": "서유럽", "trip_length_days": 12, "lowest_price_krw": 657454, "lowest_seen_at": "2026-08-24T17:09:44+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Rome-ROM.ksp", "lowest_travel_dates": "2027-06-01~2027-06-13", "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 673400, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 2.4, "outbound_date": "2027-06-01", "return_date": "2027-06-13", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Rome%20June%201%202027%20to%20June%2013%202027"}, "frankfurt": {"name_ko": "프랑크푸르트", "region": "서유럽", "trip_length_days": 12, "lowest_price_krw": 734607, "lowest_seen_at": "2026-08-24T17:09:44+09:00", "lowest_source_url": "https://flights.stubbyplanner.com/to/frankfurt", "lowest_travel_dates": "2027-06-01~2027-06-13", "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 853767, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 16.2, "outbound_date": "2027-06-01", "return_date": "2027-06-13", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Frankfurt%20June%201%202027%20to%20June%2013%202027"}, "prague": {"name_ko": "프라하", "region": "동유럽", "trip_length_days": 12, "lowest_price_krw": 795501, "lowest_seen_at": "2026-08-24T17:09:44+09:00", "lowest_source_url": "https://www.kayak.co.kr/항공권/대한민국-KR0/프라하-바츨라프하벨국제공항-PRG", "lowest_travel_dates": "2027-06-01~2027-06-13", "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 839538, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 5.5, "outbound_date": "2027-06-01", "return_date": "2027-06-13", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Prague%20June%201%202027%20to%20June%2013%202027"}, "budapest": {"name_ko": "부다페스트", "region": "동유럽", "trip_length_days": 12, "lowest_price_krw": 636603, "lowest_seen_at": "2026-08-24T17:29:00+09:00", "lowest_source_url": "https://www.skyscanner.co.kr/routes/icn/hu/incheon-international-to-hungary.html", "lowest_travel_dates": "2027-06-01~2027-06-13", "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 636603, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0.0, "outbound_date": "2027-06-01", "return_date": "2027-06-13", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Budapest%20June%201%202027%20to%20June%2013%202027"}, "warsaw": {"name_ko": "바르샤바", "region": "동유럽", "trip_length_days": 12, "lowest_price_krw": 650995, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.kayak.co.kr/항공권/인천-국제-공항-ICN/바르샤바-WA1", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 1145921, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 76.0, "outbound_date": "2027-06-01", "return_date": "2027-06-13", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Warsaw%20June%201%202027%20to%20June%2013%202027"}, "zagreb": {"name_ko": "자그레브", "region": "동유럽", "trip_length_days": 12, "lowest_price_krw": 930840, "lowest_seen_at": "2026-08-24T17:09:44+09:00", "lowest_source_url": "https://ko.skyticket.com/incheon_international_airport-zagreb_airport/", "lowest_travel_dates": "2027-06-01~2027-06-13", "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 930840, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0.0, "outbound_date": "2027-06-01", "return_date": "2027-06-13", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Zagreb%20June%201%202027%20to%20June%2013%202027"}, "hanoi": {"name_ko": "하노이", "region": "베트남", "trip_length_days": 5, "lowest_price_krw": 175051, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Hanoi-Noibai-HAN.ksp", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 285502, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 63.1, "outbound_date": "2027-06-01", "return_date": "2027-06-06", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Hanoi%20June%201%202027%20to%20June%206%202027"}, "hcmc": {"name_ko": "호치민", "region": "베트남", "trip_length_days": 5, "lowest_price_krw": 231075, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Ho-Chi-Minh-City-SGN.ksp", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 309964, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 34.1, "outbound_date": "2027-06-01", "return_date": "2027-06-06", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Ho%20Chi%20Minh%20City%20June%201%202027%20to%20June%206%202027"}, "danang": {"name_ko": "다낭", "region": "베트남", "trip_length_days": 5, "lowest_price_krw": 288288, "lowest_seen_at": "2026-08-24T17:09:44+09:00", "lowest_source_url": "https://flights.stubbyplanner.com/to/danang", "lowest_travel_dates": "2027-06-01~2027-06-06", "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 327535, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 13.6, "outbound_date": "2027-06-01", "return_date": "2027-06-06", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Da%20Nang%20June%201%202027%20to%20June%206%202027"}, "jakarta": {"name_ko": "자카르타", "region": "인도네시아", "trip_length_days": 5, "lowest_price_krw": 183101, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Jakarta-JKT.ksp", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 290343, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 58.6, "outbound_date": "2027-06-01", "return_date": "2027-06-06", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Jakarta%20June%201%202027%20to%20June%206%202027"}, "denpasar": {"name_ko": "덴파사르/발리", "region": "인도네시아", "trip_length_days": 5, "lowest_price_krw": 420361, "lowest_seen_at": "2026-08-24T16:53:00+09:00", "lowest_source_url": "https://www.kayak.co.kr/항공권/서울-인천국제공항-ICN/발리-IDBA", "lowest_travel_dates": null, "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 748049, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 78.0, "outbound_date": "2027-06-01", "return_date": "2027-06-06", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Denpasar%20Bali%20June%201%202027%20to%20June%206%202027"}, "manila": {"name_ko": "마닐라", "region": "필리핀", "trip_length_days": 5, "lowest_price_krw": 187005, "lowest_seen_at": "2026-08-24T17:29:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Manila-Ninoy-Aquino-Intl-MNL.ksp", "lowest_travel_dates": "2027-06-01~2027-06-06", "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 187005, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0.0, "outbound_date": "2027-06-01", "return_date": "2027-06-06", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Manila%20June%201%202027%20to%20June%206%202027"}, "cebu": {"name_ko": "세부", "region": "필리핀", "trip_length_days": 5, "lowest_price_krw": 167484, "lowest_seen_at": "2026-08-24T17:29:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Cebu-City-Mactan-Intl-CEB.ksp", "lowest_travel_dates": "2027-06-01~2027-06-06", "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 167484, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0.0, "outbound_date": "2027-06-01", "return_date": "2027-06-06", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Cebu%20June%201%202027%20to%20June%206%202027"}, "okinawa": {"name_ko": "오키나와/나하", "region": "일본", "trip_length_days": 5, "lowest_price_krw": 135558, "lowest_seen_at": "2026-08-24T17:29:00+09:00", "lowest_source_url": "https://www.hotelscombined.co.kr/flight-routes/Incheon-Intl-ICN/Okinawa-Naha-OKA.ksp", "lowest_travel_dates": "2027-06-01~2027-06-06", "last_checked_at": "2026-08-24T17:29:00+09:00", "last_checked_price_krw": 135558, "last_checked_confidence": "snippet_estimate", "gap_to_record_pct": 0.0, "outbound_date": "2027-06-01", "return_date": "2027-06-06", "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Okinawa%20June%201%202027%20to%20June%206%202027"}}, "series": {"paris": [{"ts": "2026-08-24T16:53:00+09:00", "price": 1270400}, {"ts": "2026-08-24T17:09:44+09:00", "price": 1270400}, {"ts": "2026-08-24T17:29:00+09:00", "price": 1270400}], "london": [{"ts": "2026-08-24T16:53:00+09:00", "price": 1103510}, {"ts": "2026-08-24T17:09:44+09:00", "price": 1103510}, {"ts": "2026-08-24T17:29:00+09:00", "price": 1103510}], "amsterdam": [{"ts": "2026-08-24T16:53:00+09:00", "price": 811898}, {"ts": "2026-08-24T17:09:44+09:00", "price": 811898}, {"ts": "2026-08-24T17:29:00+09:00", "price": 811898}], "rome": [{"ts": "2026-08-24T16:53:00+09:00", "price": 1089919}, {"ts": "2026-08-24T17:09:44+09:00", "price": 657454}, {"ts": "2026-08-24T17:29:00+09:00", "price": 673400}], "frankfurt": [{"ts": "2026-08-24T16:53:00+09:00", "price": 981600}, {"ts": "2026-08-24T17:09:44+09:00", "price": 734607}, {"ts": "2026-08-24T17:29:00+09:00", "price": 853767}], "prague": [{"ts": "2026-08-24T16:53:00+09:00", "price": 923046}, {"ts": "2026-08-24T17:09:44+09:00", "price": 795501}, {"ts": "2026-08-24T17:29:00+09:00", "price": 839538}], "budapest": [{"ts": "2026-08-24T16:53:00+09:00", "price": 1140275}, {"ts": "2026-08-24T17:09:44+09:00", "price": 1140275}, {"ts": "2026-08-24T17:29:00+09:00", "price": 636603}], "warsaw": [{"ts": "2026-08-24T16:53:00+09:00", "price": 650995}, {"ts": "2026-08-24T17:09:44+09:00", "price": 1145921}, {"ts": "2026-08-24T17:29:00+09:00", "price": 1145921}], "zagreb": [{"ts": "2026-08-24T16:53:00+09:00", "price": 1020880}, {"ts": "2026-08-24T17:09:44+09:00", "price": 930840}, {"ts": "2026-08-24T17:29:00+09:00", "price": 930840}], "hanoi": [{"ts": "2026-08-24T16:53:00+09:00", "price": 175051}, {"ts": "2026-08-24T17:09:44+09:00", "price": 310500}, {"ts": "2026-08-24T17:29:00+09:00", "price": 285502}], "hcmc": [{"ts": "2026-08-24T16:53:00+09:00", "price": 231075}, {"ts": "2026-08-24T17:09:44+09:00", "price": 239200}, {"ts": "2026-08-24T17:29:00+09:00", "price": 309964}], "danang": [{"ts": "2026-08-24T16:53:00+09:00", "price": 316784}, {"ts": "2026-08-24T17:09:44+09:00", "price": 288288}, {"ts": "2026-08-24T17:29:00+09:00", "price": 327535}], "jakarta": [{"ts": "2026-08-24T16:53:00+09:00", "price": 183101}, {"ts": "2026-08-24T17:09:44+09:00", "price": 290343}, {"ts": "2026-08-24T17:29:00+09:00", "price": 290343}], "denpasar": [{"ts": "2026-08-24T16:53:00+09:00", "price": 420361}, {"ts": "2026-08-24T17:09:44+09:00", "price": 420361}, {"ts": "2026-08-24T17:29:00+09:00", "price": 748049}], "manila": [{"ts": "2026-08-24T16:53:00+09:00", "price": 290212}, {"ts": "2026-08-24T17:09:44+09:00", "price": 290212}, {"ts": "2026-08-24T17:29:00+09:00", "price": 187005}], "cebu": [{"ts": "2026-08-24T16:53:00+09:00", "price": 177287}, {"ts": "2026-08-24T17:09:44+09:00", "price": 177287}, {"ts": "2026-08-24T17:29:00+09:00", "price": 167484}], "okinawa": [{"ts": "2026-08-24T16:53:00+09:00", "price": 271117}, {"ts": "2026-08-24T17:09:44+09:00", "price": 271117}, {"ts": "2026-08-24T17:29:00+09:00", "price": 135558}]}, "region_order": ["서유럽", "동유럽", "베트남", "인도네시아", "필리핀", "일본"]};
 
-const grid = document.getElementById('charts');
-Object.keys(chartsData).forEach(region => {
+const regionColors = {
+  "서유럽": "#4f9dff",
+  "동유럽": "#7c5cff",
+  "베트남": "#35d488",
+  "인도네시아": "#ffb84f",
+  "필리핀": "#ff6b9d",
+  "일본": "#5be3d8",
+};
+
+const grid = document.getElementById('chartsGrid');
+
+DATA.region_order.forEach(region => {
+  const routesInRegion = Object.entries(DATA.history).filter(([k,v]) => v.region === region);
+  if (routesInRegion.length === 0) return;
+
   const box = document.createElement('div');
-  box.className = 'card';
-  const title = document.createElement('div');
-  title.className = 'region-title';
-  title.style.color = regionColors[region] || '#58a6ff';
-  title.textContent = region;
-  box.appendChild(title);
-  const chartBox = document.createElement('div');
-  chartBox.className = 'chart-box';
+  box.className = 'chart-box';
+  const h3 = document.createElement('h3');
+  h3.textContent = region;
   const canvas = document.createElement('canvas');
-  chartBox.appendChild(canvas);
-  box.appendChild(chartBox);
+  box.appendChild(h3);
+  box.appendChild(canvas);
   grid.appendChild(box);
 
-  const datasets = chartsData[region].map((ds, i) => ({
-    label: ds.label,
-    data: ds.data,
-    borderColor: seriesPalette[i % seriesPalette.length],
-    backgroundColor: seriesPalette[i % seriesPalette.length],
-    borderWidth: 2,
-    pointRadius: 4,
-    pointHoverRadius: 6,
-    tension: 0.15,
-    spanGaps: true,
-  }));
+  const datasets = [];
+  const palette = ["#4f9dff","#7c5cff","#35d488","#ffb84f","#ff6b9d","#5be3d8","#e6e9ef","#ff6b6b","#c9a0ff"];
+  let ci = 0;
+  routesInRegion.forEach(([key, v]) => {
+    const series = (DATA.series[key] || []).map(p => ({ x: p.ts, y: p.price }));
+    const color = palette[ci % palette.length]; ci++;
+    datasets.push({
+      label: v.name_ko + ' 조회가',
+      data: series,
+      borderColor: color,
+      backgroundColor: color,
+      tension: 0.2,
+      pointRadius: 3,
+    });
+    if (v.lowest_price_krw != null && series.length > 0) {
+      datasets.push({
+        label: v.name_ko + ' 역대최저가',
+        data: series.map(p => ({ x: p.x, y: v.lowest_price_krw })),
+        borderColor: color,
+        borderDash: [4,4],
+        pointRadius: 0,
+        borderWidth: 1,
+      });
+    }
+  });
 
   new Chart(canvas.getContext('2d'), {
     type: 'line',
     data: { datasets },
     options: {
       responsive: true,
-      maintainAspectRatio: false,
-      interaction: { mode: 'nearest', axis: 'x', intersect: false },
+      interaction: { mode: 'nearest', intersect: false },
       scales: {
-        x: {
-          type: 'time',
-          time: { unit: 'day' },
-          ticks: { color: '#8b949e' },
-          grid: { color: 'rgba(255,255,255,0.06)' },
-        },
-        y: {
-          ticks: { color: '#8b949e', callback: (v) => '₩' + v.toLocaleString() },
-          grid: { color: 'rgba(255,255,255,0.06)' },
-        },
+        x: { type: 'time', time: { unit: 'day' }, ticks: { color: '#9aa3b2' }, grid: { color: '#262b36' } },
+        y: { ticks: { color: '#9aa3b2', callback: v => (v/10000) + '만' }, grid: { color: '#262b36' } }
       },
       plugins: {
-        legend: { labels: { color: '#c9d1d9', boxWidth: 12, font: { size: 11 } } },
-        tooltip: {
-          callbacks: {
-            label: (ctx) => ctx.dataset.label + ': ₩' + ctx.parsed.y.toLocaleString(),
-          }
-        },
-      },
+        legend: { labels: { color: '#9aa3b2', font: { size: 10 } } },
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString() + '원' } }
+      }
     }
   });
 });
