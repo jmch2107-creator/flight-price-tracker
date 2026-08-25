@@ -1166,7 +1166,7 @@
       }
     },
     "best_source": "interpark",
-    "suspicious": true,
+    "suspicious": false,
     "prev_checked_price_krw": 1179100,
     "lowest_source": "interpark"
   },
@@ -1749,12 +1749,12 @@
     ],
     "season_note": "12~5월 건기 최적, 7~10월 우기+태풍",
     "season_grade": 3,
-    "lowest_price_krw": 2445600,
-    "lowest_seen_at": "2026-08-25T11:07:29+09:00",
-    "lowest_source_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20SPN%20June%201%202027%20to%20June%206%202027",
-    "lowest_travel_dates": "2027-06-01 ~ 2027-06-06",
+    "lowest_price_krw": 515000,
+    "lowest_seen_at": "2026-08-25T14:59:02+09:00",
+    "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-SPN/2027-06-05/2027-06-10?sort=price_a",
+    "lowest_travel_dates": "2027-06-05 ~ 2027-06-10 (5박)",
     "lowest_confidence": "browser_verified",
-    "gap_to_record_pct": -78.9,
+    "gap_to_record_pct": 0.0,
     "sources": {
       "google": {
         "price": 665400,
@@ -1771,7 +1771,11 @@
       }
     },
     "best_source": "kayak",
-    "suspicious": true,
-    "prev_checked_price_krw": 515000
+    "suspicious": false,
+    "prev_checked_price_krw": 515000,
+    "lowest_source": "kayak",
+    "lowest_outbound": "2027-06-05",
+    "lowest_return": "2027-06-10",
+    "lowest_trip_len": 5
   }
 }
