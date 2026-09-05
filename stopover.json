@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-05T18:00:01+09:00",
+  "checked_at": "2026-09-05T21:00:01+09:00",
   "nights_egypt": 3,
   "nights_eu": 9,
   "options": {
@@ -30,7 +30,7 @@
     },
     "rome": {
       "city": "로마",
-      "total": 1714224,
+      "total": 1715791,
       "lowest_total": 1555727,
       "legs": [
         {
@@ -42,7 +42,7 @@
         {
           "label": "카이로 → 로마",
           "date": "2027-06-04",
-          "price": 376748,
+          "price": 378315,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20CAI%20to%20FCO%20one%20way%20June%204%202027"
         },
         {
