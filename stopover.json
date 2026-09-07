@@ -1,17 +1,17 @@
 {
-  "checked_at": "2026-09-07T21:00:01+09:00",
+  "checked_at": "2026-09-08T00:00:02+09:00",
   "nights_egypt": 3,
   "nights_eu": 9,
   "options": {
     "paris": {
       "city": "파리",
-      "total": 1519644,
+      "total": 1517344,
       "lowest_total": 1492898,
       "legs": [
         {
           "label": "인천 → 카이로",
           "date": "2027-06-01",
-          "price": 610800,
+          "price": 608500,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20CAI%20one%20way%20June%201%202027"
         },
         {
@@ -30,19 +30,19 @@
     },
     "rome": {
       "city": "로마",
-      "total": 1582992,
-      "lowest_total": 1555727,
+      "total": 1554149,
+      "lowest_total": 1554149,
       "legs": [
         {
           "label": "인천 → 카이로",
           "date": "2027-06-01",
-          "price": 610800,
+          "price": 608500,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20CAI%20one%20way%20June%201%202027"
         },
         {
           "label": "카이로 → 로마",
           "date": "2027-06-04",
-          "price": 245534,
+          "price": 218991,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20CAI%20to%20FCO%20one%20way%20June%204%202027"
         },
         {
@@ -55,13 +55,13 @@
     },
     "frankfurt": {
       "city": "프랑크푸르트",
-      "total": 1551084,
+      "total": 1548784,
       "lowest_total": 1547028,
       "legs": [
         {
           "label": "인천 → 카이로",
           "date": "2027-06-01",
-          "price": 610800,
+          "price": 608500,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20CAI%20one%20way%20June%201%202027"
         },
         {
