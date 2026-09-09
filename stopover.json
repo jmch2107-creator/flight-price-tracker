@@ -1,23 +1,23 @@
 {
-  "checked_at": "2026-09-09T21:00:01+09:00",
+  "checked_at": "2026-09-10T00:00:01+09:00",
   "nights_egypt": 3,
   "nights_eu": 9,
   "options": {
     "paris": {
       "city": "파리",
-      "total": 1485441,
+      "total": 1484764,
       "lowest_total": 1484451,
       "legs": [
         {
           "label": "인천 → 카이로",
           "date": "2027-06-01",
-          "price": 608600,
+          "price": 607900,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20CAI%20one%20way%20June%201%202027"
         },
         {
           "label": "카이로 → 파리",
           "date": "2027-06-04",
-          "price": 195106,
+          "price": 195129,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20CAI%20to%20CDG%20one%20way%20June%204%202027"
         },
         {
@@ -30,19 +30,19 @@
     },
     "rome": {
       "city": "로마",
-      "total": 1573922,
-      "lowest_total": 1547875,
+      "total": 1547089,
+      "lowest_total": 1547089,
       "legs": [
         {
           "label": "인천 → 카이로",
           "date": "2027-06-01",
-          "price": 608600,
+          "price": 607900,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20CAI%20one%20way%20June%201%202027"
         },
         {
           "label": "카이로 → 로마",
           "date": "2027-06-04",
-          "price": 242690,
+          "price": 216557,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20CAI%20to%20FCO%20one%20way%20June%204%202027"
         },
         {
@@ -55,19 +55,19 @@
     },
     "frankfurt": {
       "city": "프랑크푸르트",
-      "total": 1540979,
+      "total": 1540306,
       "lowest_total": 1506831,
       "legs": [
         {
           "label": "인천 → 카이로",
           "date": "2027-06-01",
-          "price": 608600,
+          "price": 607900,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20CAI%20one%20way%20June%201%202027"
         },
         {
           "label": "카이로 → 프랑크푸르트",
           "date": "2027-06-04",
-          "price": 236509,
+          "price": 236536,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20CAI%20to%20FRA%20one%20way%20June%204%202027"
         },
         {
