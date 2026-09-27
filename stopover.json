@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-09-27T00:00:01+09:00",
+  "checked_at": "2026-09-27T09:00:01+09:00",
   "nights_egypt": 3,
   "nights_eu": 9,
   "options": {
     "paris": {
       "city": "파리",
-      "total": 1352751,
+      "total": 1353763,
       "lowest_total": 1332118,
       "legs": [
         {
@@ -17,7 +17,7 @@
         {
           "label": "카이로 → 파리",
           "date": "2027-06-04",
-          "price": 198217,
+          "price": 199229,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20CAI%20to%20CDG%20one%20way%20June%204%202027"
         },
         {
