@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-03T12:00:02+09:00",
+  "checked_at": "2026-10-03T15:00:01+09:00",
   "nights_egypt": 3,
   "nights_eu": 9,
   "options": {
@@ -55,7 +55,7 @@
     },
     "frankfurt": {
       "city": "프랑크푸르트",
-      "total": 1351296,
+      "total": 1367676,
       "lowest_total": 1347399,
       "legs": [
         {
@@ -67,7 +67,7 @@
         {
           "label": "카이로 → 프랑크푸르트",
           "date": "2027-06-04",
-          "price": 165187,
+          "price": 181567,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20CAI%20to%20FRA%20one%20way%20June%204%202027"
         },
         {
