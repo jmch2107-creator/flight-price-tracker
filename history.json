@@ -7,10 +7,10 @@
     "lowest_seen_at": "2026-10-14T18:00:01+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-CDG/2027-06-07/2027-06-17?sort=price_a",
     "lowest_travel_dates": "2027-06-07 ~ 2027-06-17 (10박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 873700,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 871578,
     "last_checked_confidence": "browser_verified",
-    "gap_to_record_pct": 2.4,
+    "gap_to_record_pct": 2.2,
     "outbound_date": "2027-06-07",
     "return_date": "2027-06-17",
     "booking_url": "https://www.kayak.co.kr/flights/ICN-CDG/2027-06-07/2027-06-17?sort=price_a",
@@ -35,23 +35,23 @@
       "google": {
         "price": 945700,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Paris%20June%207%202027%20to%20June%2017%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 928500,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:CDG-20270607/a:CDG-a:ICN-20270617?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 9개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 873700,
+        "price": 871578,
         "url": "https://www.kayak.co.kr/flights/ICN-CDG/2027-06-07/2027-06-17?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 873700,
+    "prev_checked_price_krw": 871578,
     "lowest_source": "kayak",
     "corroborated": true,
     "lowest_outbound": "2027-06-07",
@@ -66,10 +66,10 @@
     "lowest_seen_at": "2026-10-14T00:00:01+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-LHR/2027-06-08/2027-06-18?sort=price_a",
     "lowest_travel_dates": "2027-06-08 ~ 2027-06-18 (10박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 936300,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 1042200,
     "last_checked_confidence": "browser_verified",
-    "gap_to_record_pct": 2.6,
+    "gap_to_record_pct": 14.2,
     "outbound_date": "2027-06-08",
     "return_date": "2027-06-18",
     "booking_url": "https://www.kayak.co.kr/flights/ICN-LHR/2027-06-08/2027-06-18?sort=price_a",
@@ -94,23 +94,23 @@
       "google": {
         "price": 1069600,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20London%20June%208%202027%20to%20June%2018%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 1181100,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:LHR-20270608/a:LHR-a:ICN-20270618?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "일반 신용카드",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 936300,
+        "price": 1042200,
         "url": "https://www.kayak.co.kr/flights/ICN-LHR/2027-06-08/2027-06-18?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 936300,
+    "prev_checked_price_krw": 1042200,
     "lowest_source": "kayak",
     "corroborated": true,
     "lowest_outbound": "2027-06-08",
@@ -125,10 +125,10 @@
     "lowest_seen_at": "2026-10-09T09:00:01+09:00",
     "lowest_source_url": "https://travel.interpark.com/air/search/a:ICN-a:AMS-20270603/a:AMS-a:ICN-20270615?cabin=ECONOMY&adult=1&child=0&infant=0",
     "lowest_travel_dates": "2027-06-03 ~ 2027-06-15 (12박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 922381,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 926691,
     "last_checked_confidence": "browser_verified",
-    "gap_to_record_pct": 3.1,
+    "gap_to_record_pct": 3.5,
     "outbound_date": "2027-06-03",
     "return_date": "2027-06-15",
     "booking_url": "https://www.kayak.co.kr/flights/ICN-AMS/2027-06-03/2027-06-15?sort=price_a",
@@ -153,23 +153,23 @@
       "google": {
         "price": 1063700,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Amsterdam%20June%203%202027%20to%20June%2015%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 973000,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:AMS-20270603/a:AMS-a:ICN-20270615?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 9개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 922381,
+        "price": 926691,
         "url": "https://www.kayak.co.kr/flights/ICN-AMS/2027-06-03/2027-06-15?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 922381,
+    "prev_checked_price_krw": 926691,
     "lowest_source": "interpark",
     "lowest_outbound": "2027-06-03",
     "lowest_return": "2027-06-15",
@@ -184,10 +184,10 @@
     "lowest_seen_at": "2026-09-29T12:00:02+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-FCO/2027-06-07/2027-06-19?sort=price_a",
     "lowest_travel_dates": "2027-06-07 ~ 2027-06-19 (12박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 917618,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 922320,
     "last_checked_confidence": "browser_verified",
-    "gap_to_record_pct": 12.2,
+    "gap_to_record_pct": 12.8,
     "outbound_date": "2027-06-07",
     "return_date": "2027-06-19",
     "booking_url": "https://www.kayak.co.kr/flights/ICN-FCO/2027-06-07/2027-06-19?sort=price_a",
@@ -212,23 +212,23 @@
       "google": {
         "price": 923400,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Rome%20June%207%202027%20to%20June%2019%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 943700,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:FCO-20270607/a:FCO-a:ICN-20270619?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 5개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 917618,
+        "price": 922320,
         "url": "https://www.kayak.co.kr/flights/ICN-FCO/2027-06-07/2027-06-19?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 917618,
+    "prev_checked_price_krw": 922320,
     "lowest_source": "kayak",
     "corroborated": true,
     "lowest_outbound": "2027-06-07",
@@ -238,18 +238,18 @@
   "frankfurt": {
     "name_ko": "프랑크푸르트",
     "region": "서유럽",
-    "trip_length_days": 14,
+    "trip_length_days": 11,
     "lowest_price_krw": 840000,
     "lowest_seen_at": "2026-10-19T09:00:01+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-FRA/2027-06-08/2027-06-22?sort=price_a",
     "lowest_travel_dates": "2027-06-08 ~ 2027-06-22 (14박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 840000,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 1124094,
     "last_checked_confidence": "browser_verified",
-    "gap_to_record_pct": 0.0,
-    "outbound_date": "2027-07-07",
-    "return_date": "2027-07-21",
-    "booking_url": "https://www.kayak.co.kr/flights/ICN-FRA/2027-07-07/2027-07-21?sort=price_a",
+    "gap_to_record_pct": 33.8,
+    "outbound_date": "2027-08-16",
+    "return_date": "2027-08-27",
+    "booking_url": "https://www.kayak.co.kr/flights/ICN-FRA/2027-08-16/2027-08-27?sort=price_a",
     "lowest_confidence": "browser_verified",
     "season_months": [
       3,
@@ -269,25 +269,25 @@
     "season_grade": 2,
     "sources": {
       "google": {
-        "price": 1388300,
-        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Frankfurt%20July%207%202027%20to%20July%2021%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 1457100,
+        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Frankfurt%20August%2016%202027%20to%20August%2027%202027",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
-        "price": 1212900,
-        "url": "https://travel.interpark.com/air/search/a:ICN-a:FRA-20270707/a:FRA-a:ICN-20270721?cabin=ECONOMY&adult=1&child=0&infant=0",
+        "price": 1161900,
+        "url": "https://travel.interpark.com/air/search/a:ICN-a:FRA-20270816/a:FRA-a:ICN-20270827?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 5개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 840000,
-        "url": "https://www.kayak.co.kr/flights/ICN-FRA/2027-07-07/2027-07-21?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 1124094,
+        "url": "https://www.kayak.co.kr/flights/ICN-FRA/2027-08-16/2027-08-27?sort=price_a",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 840000,
+    "prev_checked_price_krw": 1124094,
     "lowest_source": "kayak",
     "corroborated": true,
     "lowest_outbound": "2027-06-08",
@@ -356,18 +356,18 @@
   "budapest": {
     "name_ko": "부다페스트",
     "region": "동유럽",
-    "trip_length_days": 14,
+    "trip_length_days": 10,
     "lowest_price_krw": 766500,
     "lowest_seen_at": "2026-10-07T09:00:02+09:00",
     "lowest_source_url": "https://travel.interpark.com/air/search/a:ICN-a:BUD-20270601/a:BUD-a:ICN-20270611?cabin=ECONOMY&adult=1&child=0&infant=0",
     "lowest_travel_dates": "2027-06-01 ~ 2027-06-11 (10박)",
-    "last_checked_at": "2026-10-19T12:00:01+09:00",
-    "last_checked_price_krw": 976400,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 1038800,
     "last_checked_confidence": "browser_verified",
-    "gap_to_record_pct": 27.4,
-    "outbound_date": "2027-06-07",
-    "return_date": "2027-06-21",
-    "booking_url": "https://www.kayak.co.kr/flights/ICN-BUD/2027-06-07/2027-06-21?sort=price_a",
+    "gap_to_record_pct": 35.5,
+    "outbound_date": "2027-07-12",
+    "return_date": "2027-07-22",
+    "booking_url": "https://www.kayak.co.kr/flights/ICN-BUD/2027-07-12/2027-07-22?sort=price_a",
     "lowest_confidence": "browser_verified",
     "season_months": [
       3,
@@ -384,28 +384,28 @@
       3
     ],
     "season_note": "5~6월·9~10월 최적, 겨울 매우 추움",
-    "season_grade": 1,
+    "season_grade": 2,
     "sources": {
       "google": {
-        "price": 1126200,
-        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Budapest%20June%207%202027%20to%20June%2021%202027",
-        "checked_at": "2026-10-19T12:00:01+09:00"
+        "price": 1973600,
+        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Budapest%20July%2012%202027%20to%20July%2022%202027",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
-        "price": 1117900,
-        "url": "https://travel.interpark.com/air/search/a:ICN-a:BUD-20270607/a:BUD-a:ICN-20270621?cabin=ECONOMY&adult=1&child=0&infant=0",
-        "condition": "일반 신용카드",
-        "checked_at": "2026-10-19T12:00:01+09:00"
+        "price": 1154600,
+        "url": "https://travel.interpark.com/air/search/a:ICN-a:BUD-20270712/a:BUD-a:ICN-20270722?cabin=ECONOMY&adult=1&child=0&infant=0",
+        "condition": "외 9개",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 976400,
-        "url": "https://www.kayak.co.kr/flights/ICN-BUD/2027-06-07/2027-06-21?sort=price_a",
-        "checked_at": "2026-10-19T12:00:01+09:00"
+        "price": 1038800,
+        "url": "https://www.kayak.co.kr/flights/ICN-BUD/2027-07-12/2027-07-22?sort=price_a",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 976400,
+    "prev_checked_price_krw": 1038800,
     "lowest_source": "interpark",
     "corroborated": true,
     "lowest_outbound": "2027-06-01",
@@ -415,18 +415,18 @@
   "warsaw": {
     "name_ko": "바르샤바",
     "region": "동유럽",
-    "trip_length_days": 14,
+    "trip_length_days": 12,
     "lowest_price_krw": 790661,
     "lowest_seen_at": "2026-09-25T12:00:01+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-WAW/2027-06-03/2027-06-15?sort=price_a",
     "lowest_travel_dates": "2027-06-03 ~ 2027-06-15 (12박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 913240,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 1001932,
     "last_checked_confidence": "browser_verified",
-    "gap_to_record_pct": 15.5,
-    "outbound_date": "2027-07-07",
-    "return_date": "2027-07-21",
-    "booking_url": "https://www.kayak.co.kr/flights/ICN-WAW/2027-07-07/2027-07-21?sort=price_a",
+    "gap_to_record_pct": 26.7,
+    "outbound_date": "2027-06-20",
+    "return_date": "2027-07-02",
+    "booking_url": "https://www.kayak.co.kr/flights/ICN-WAW/2027-06-20/2027-07-02?sort=price_a",
     "lowest_confidence": "browser_verified",
     "season_months": [
       3,
@@ -443,28 +443,28 @@
       3
     ],
     "season_note": "5~6월·9월만 쾌적, 겨울 혹한",
-    "season_grade": 2,
+    "season_grade": 1,
     "sources": {
       "google": {
-        "price": 2033300,
-        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Warsaw%20July%207%202027%20to%20July%2021%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 1013600,
+        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Warsaw%20June%2020%202027%20to%20July%202%202027",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
-        "price": 925900,
-        "url": "https://travel.interpark.com/air/search/a:ICN-a:WAW-20270707/a:WAW-a:ICN-20270721?cabin=ECONOMY&adult=1&child=0&infant=0",
+        "price": 1012400,
+        "url": "https://travel.interpark.com/air/search/a:ICN-a:WAW-20270620/a:WAW-a:ICN-20270702?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 5개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 913240,
-        "url": "https://www.kayak.co.kr/flights/ICN-WAW/2027-07-07/2027-07-21?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 1001932,
+        "url": "https://www.kayak.co.kr/flights/ICN-WAW/2027-06-20/2027-07-02?sort=price_a",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 913240,
+    "prev_checked_price_krw": 1001932,
     "lowest_source": "kayak",
     "lowest_outbound": "2027-06-03",
     "lowest_return": "2027-06-15",
@@ -474,18 +474,18 @@
   "zagreb": {
     "name_ko": "자그레브",
     "region": "동유럽",
-    "trip_length_days": 10,
+    "trip_length_days": 11,
     "lowest_price_krw": 873100,
     "lowest_seen_at": "2026-09-11T00:00:01+09:00",
     "lowest_source_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Zagreb%20June%203%202027%20to%20June%2015%202027",
     "lowest_travel_dates": "2027-06-03 ~ 2027-06-15 (12박)",
-    "last_checked_at": "2026-10-19T15:00:01+09:00",
-    "last_checked_price_krw": 1143868,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 1086100,
     "last_checked_confidence": "browser_verified",
-    "gap_to_record_pct": 31.0,
-    "outbound_date": "2027-06-12",
-    "return_date": "2027-06-22",
-    "booking_url": "https://www.kayak.co.kr/flights/ICN-ZAG/2027-06-12/2027-06-22?sort=price_a",
+    "gap_to_record_pct": 24.4,
+    "outbound_date": "2027-08-16",
+    "return_date": "2027-08-27",
+    "booking_url": "https://www.kayak.co.kr/flights/ICN-ZAG/2027-08-16/2027-08-27?sort=price_a",
     "lowest_confidence": "browser_verified",
     "season_months": [
       3,
@@ -502,28 +502,28 @@
       3
     ],
     "season_note": "5~6월·9월 최적, 겨울 춥고 흐림",
-    "season_grade": 1,
+    "season_grade": 2,
     "sources": {
       "google": {
-        "price": 1226000,
-        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Zagreb%20June%2012%202027%20to%20June%2022%202027",
-        "checked_at": "2026-10-19T15:00:01+09:00"
+        "price": 1097300,
+        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Zagreb%20August%2016%202027%20to%20August%2027%202027",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
-        "price": 1176600,
-        "url": "https://travel.interpark.com/air/search/a:ICN-a:ZAG-20270612/a:ZAG-a:ICN-20270622?cabin=ECONOMY&adult=1&child=0&infant=0",
-        "condition": "일반 신용카드",
-        "checked_at": "2026-10-19T15:00:01+09:00"
+        "price": 1093900,
+        "url": "https://travel.interpark.com/air/search/a:ICN-a:ZAG-20270816/a:ZAG-a:ICN-20270827?cabin=ECONOMY&adult=1&child=0&infant=0",
+        "condition": "외 5개",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 1143868,
-        "url": "https://www.kayak.co.kr/flights/ICN-ZAG/2027-06-12/2027-06-22?sort=price_a",
-        "checked_at": "2026-10-19T15:00:01+09:00"
+        "price": 1086100,
+        "url": "https://www.kayak.co.kr/flights/ICN-ZAG/2027-08-16/2027-08-27?sort=price_a",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 1143868,
+    "prev_checked_price_krw": 1086100,
     "lowest_source": "google",
     "corroborated": true,
     "lowest_outbound": "2027-06-03",
@@ -538,10 +538,10 @@
     "lowest_seen_at": "2026-09-09T15:00:01+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-HAN/2027-07-01/2027-07-06?sort=price_a",
     "lowest_travel_dates": "2027-07-01 ~ 2027-07-06 (5박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 258405,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 263045,
     "last_checked_confidence": "browser_verified",
-    "gap_to_record_pct": 26.0,
+    "gap_to_record_pct": 28.3,
     "outbound_date": "2027-07-01",
     "return_date": "2027-07-06",
     "booking_url": "https://www.kayak.co.kr/flights/ICN-HAN/2027-07-01/2027-07-06?sort=price_a",
@@ -566,23 +566,23 @@
       "google": {
         "price": 272308,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Hanoi%20July%201%202027%20to%20July%206%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 356700,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:HAN-20270701/a:HAN-a:ICN-20270706?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 7개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 258405,
+        "price": 263045,
         "url": "https://www.kayak.co.kr/flights/ICN-HAN/2027-07-01/2027-07-06?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 258405,
+    "prev_checked_price_krw": 263045,
     "lowest_source": "kayak",
     "lowest_outbound": "2027-07-01",
     "lowest_return": "2027-07-06",
@@ -597,7 +597,7 @@
     "lowest_seen_at": "2026-09-09T15:00:01+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-SGN/2027-06-07/2027-06-14?sort=price_a",
     "lowest_travel_dates": "2027-06-07 ~ 2027-06-14 (7박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
     "last_checked_price_krw": 271099,
     "last_checked_confidence": "browser_verified",
     "gap_to_record_pct": 23.0,
@@ -625,18 +625,18 @@
       "google": {
         "price": 285349,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20SGN%20June%207%202027%20to%20June%2014%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 368800,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:SGN-20270607/a:SGN-a:ICN-20270614?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 7개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
         "price": 271099,
         "url": "https://www.kayak.co.kr/flights/ICN-SGN/2027-06-07/2027-06-14?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
@@ -656,10 +656,10 @@
     "lowest_seen_at": "2026-09-09T15:00:01+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-DAD/2027-06-07/2027-06-14?sort=price_a",
     "lowest_travel_dates": "2027-06-07 ~ 2027-06-14 (7박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 242951,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 243176,
     "last_checked_confidence": "browser_verified",
-    "gap_to_record_pct": 21.2,
+    "gap_to_record_pct": 21.3,
     "outbound_date": "2027-06-07",
     "return_date": "2027-06-14",
     "booking_url": "https://www.kayak.co.kr/flights/ICN-DAD/2027-06-07/2027-06-14?sort=price_a",
@@ -684,23 +684,23 @@
       "google": {
         "price": 264483,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20DAD%20June%207%202027%20to%20June%2014%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 344500,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:DAD-20270607/a:DAD-a:ICN-20270614?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 6개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 242951,
+        "price": 243176,
         "url": "https://www.kayak.co.kr/flights/ICN-DAD/2027-06-07/2027-06-14?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 242951,
+    "prev_checked_price_krw": 243176,
     "lowest_source": "kayak",
     "lowest_outbound": "2027-06-07",
     "lowest_return": "2027-06-14",
@@ -715,10 +715,10 @@
     "lowest_seen_at": "2026-09-05T09:00:01+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-CGK/2027-06-21/2027-06-25?sort=price_a",
     "lowest_travel_dates": "2027-06-21 ~ 2027-06-25 (4박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 431400,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 424100,
     "last_checked_confidence": "browser_verified",
-    "gap_to_record_pct": 17.4,
+    "gap_to_record_pct": 15.4,
     "outbound_date": "2027-06-21",
     "return_date": "2027-06-25",
     "booking_url": "https://www.kayak.co.kr/flights/ICN-CGK/2027-06-21/2027-06-25?sort=price_a",
@@ -743,23 +743,23 @@
       "google": {
         "price": 442887,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Jakarta%20June%2021%202027%20to%20June%2025%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 454300,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:CGK-20270621/a:CGK-a:ICN-20270625?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 8개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 431400,
+        "price": 424100,
         "url": "https://www.kayak.co.kr/flights/ICN-CGK/2027-06-21/2027-06-25?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 431400,
+    "prev_checked_price_krw": 424100,
     "lowest_source": "kayak",
     "lowest_outbound": "2027-06-21",
     "lowest_return": "2027-06-25",
@@ -774,8 +774,8 @@
     "lowest_seen_at": "2026-09-29T21:00:01+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-DPS/2027-06-24/2027-06-28?sort=price_a",
     "lowest_travel_dates": "2027-06-24 ~ 2027-06-28 (4박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 394069,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 394023,
     "last_checked_confidence": "browser_verified",
     "gap_to_record_pct": 9.7,
     "outbound_date": "2027-06-24",
@@ -800,25 +800,25 @@
     "season_grade": 1,
     "sources": {
       "google": {
-        "price": 394069,
+        "price": 394023,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20DPS%20June%2024%202027%20to%20June%2028%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 453700,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:DPS-20270624/a:DPS-a:ICN-20270628?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 8개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 400771,
+        "price": 396371,
         "url": "https://www.kayak.co.kr/flights/ICN-DPS/2027-06-24/2027-06-28?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "google",
     "suspicious": false,
-    "prev_checked_price_krw": 394069,
+    "prev_checked_price_krw": 394023,
     "lowest_source": "kayak",
     "corroborated": true,
     "lowest_outbound": "2027-06-24",
@@ -833,7 +833,7 @@
     "lowest_seen_at": "2026-10-08T21:00:01+09:00",
     "lowest_source_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Manila%20June%2012%202027%20to%20June%2018%202027",
     "lowest_travel_dates": "2027-06-12 ~ 2027-06-18 (6박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
     "last_checked_price_krw": 324300,
     "last_checked_confidence": "browser_verified",
     "gap_to_record_pct": 61.1,
@@ -861,18 +861,18 @@
       "google": {
         "price": 324300,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Manila%20June%2012%202027%20to%20June%2018%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 345200,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:MNL-20270612/a:MNL-a:ICN-20270618?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 6개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
         "price": 324300,
         "url": "https://www.kayak.co.kr/flights/ICN-MNL/2027-06-12/2027-06-18?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "google",
@@ -892,13 +892,13 @@
     "lowest_seen_at": "2026-10-09T00:00:01+09:00",
     "lowest_source_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20CEB%20June%2025%202027%20to%20June%2029%202027",
     "lowest_travel_dates": "2027-06-25 ~ 2027-06-29 (4박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 361912,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 363617,
     "last_checked_confidence": "browser_verified",
-    "gap_to_record_pct": 63.7,
-    "outbound_date": "2027-06-29",
-    "return_date": "2027-07-03",
-    "booking_url": "https://www.kayak.co.kr/flights/ICN-CEB/2027-06-29/2027-07-03?sort=price_a",
+    "gap_to_record_pct": 64.5,
+    "outbound_date": "2027-06-25",
+    "return_date": "2027-06-29",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20CEB%20June%2025%202027%20to%20June%2029%202027",
     "lowest_confidence": "browser_verified",
     "season_months": [
       1,
@@ -918,25 +918,25 @@
     "season_grade": 3,
     "sources": {
       "google": {
-        "price": 363607,
-        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20CEB%20June%2029%202027%20to%20July%203%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 363617,
+        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20CEB%20June%2025%202027%20to%20June%2029%202027",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 437700,
-        "url": "https://travel.interpark.com/air/search/a:ICN-a:CEB-20270629/a:CEB-a:ICN-20270703?cabin=ECONOMY&adult=1&child=0&infant=0",
+        "url": "https://travel.interpark.com/air/search/a:ICN-a:CEB-20270625/a:CEB-a:ICN-20270629?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 6개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 361912,
-        "url": "https://www.kayak.co.kr/flights/ICN-CEB/2027-06-29/2027-07-03?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 365133,
+        "url": "https://www.kayak.co.kr/flights/ICN-CEB/2027-06-25/2027-06-29?sort=price_a",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
-    "best_source": "kayak",
+    "best_source": "google",
     "suspicious": false,
-    "prev_checked_price_krw": 361912,
+    "prev_checked_price_krw": 363617,
     "lowest_source": "google",
     "corroborated": true,
     "lowest_outbound": "2027-06-25",
@@ -951,8 +951,8 @@
     "lowest_seen_at": "2026-09-16T18:00:01+09:00",
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-OKA/2027-06-18/2027-06-22?sort=price_a",
     "lowest_travel_dates": "2027-06-18 ~ 2027-06-22 (4박)",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 470500,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 470463,
     "last_checked_confidence": "browser_verified",
     "gap_to_record_pct": 84.8,
     "outbound_date": "2027-06-18",
@@ -979,23 +979,23 @@
       "google": {
         "price": 489000,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Okinawa%20June%2018%202027%20to%20June%2022%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 477400,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:OKA-20270618/a:OKA-a:ICN-20270622?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 10개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 470500,
+        "price": 470463,
         "url": "https://www.kayak.co.kr/flights/ICN-OKA/2027-06-18/2027-06-22?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 470500,
+    "prev_checked_price_krw": 470463,
     "lowest_source": "kayak",
     "lowest_outbound": "2027-06-18",
     "lowest_return": "2027-06-22",
@@ -1005,12 +1005,12 @@
   "tbilisi": {
     "name_ko": "트빌리시(조지아)",
     "region": "조지아",
-    "trip_length_days": 11,
-    "outbound_date": "2027-06-03",
-    "return_date": "2027-06-14",
-    "booking_url": "https://www.kayak.co.kr/flights/ICN-TBS/2027-06-03/2027-06-14?sort=price_a",
-    "last_checked_at": "2026-10-19T15:00:01+09:00",
-    "last_checked_price_krw": 1108028,
+    "trip_length_days": 12,
+    "outbound_date": "2027-06-20",
+    "return_date": "2027-07-02",
+    "booking_url": "https://www.kayak.co.kr/flights/ICN-TBS/2027-06-20/2027-07-02?sort=price_a",
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 1104682,
     "last_checked_confidence": "browser_verified",
     "season_months": [
       3,
@@ -1033,28 +1033,28 @@
     "lowest_source_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Tbilisi%20June%203%202027%20to%20June%2014%202027",
     "lowest_travel_dates": "2027-06-03 ~ 2027-06-14 (11박)",
     "lowest_confidence": "browser_verified",
-    "gap_to_record_pct": 28.4,
+    "gap_to_record_pct": 28.0,
     "sources": {
       "google": {
-        "price": 1194300,
-        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Tbilisi%20June%203%202027%20to%20June%2014%202027",
-        "checked_at": "2026-10-19T15:00:01+09:00"
+        "price": 1264700,
+        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20Incheon%20to%20Tbilisi%20June%2020%202027%20to%20July%202%202027",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
-        "price": 1196300,
-        "url": "https://travel.interpark.com/air/search/a:ICN-a:TBS-20270603/a:TBS-a:ICN-20270614?cabin=ECONOMY&adult=1&child=0&infant=0",
+        "price": 1220200,
+        "url": "https://travel.interpark.com/air/search/a:ICN-a:TBS-20270620/a:TBS-a:ICN-20270702?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 9개",
-        "checked_at": "2026-10-19T15:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 1108028,
-        "url": "https://www.kayak.co.kr/flights/ICN-TBS/2027-06-03/2027-06-14?sort=price_a",
-        "checked_at": "2026-10-19T15:00:01+09:00"
+        "price": 1104682,
+        "url": "https://www.kayak.co.kr/flights/ICN-TBS/2027-06-20/2027-07-02?sort=price_a",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 1108028,
+    "prev_checked_price_krw": 1104682,
     "lowest_source": "google",
     "corroborated": true,
     "lowest_outbound": "2027-06-03",
@@ -1186,8 +1186,8 @@
     "outbound_date": "2027-06-13",
     "return_date": "2027-06-23",
     "booking_url": "https://www.kayak.co.kr/flights/ICN-BCN/2027-06-13/2027-06-23?sort=price_a",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 793930,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 791400,
     "last_checked_confidence": "browser_verified",
     "season_months": [
       3,
@@ -1210,28 +1210,28 @@
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-BCN/2027-06-13/2027-06-23?sort=price_a",
     "lowest_travel_dates": "2027-06-13 ~ 2027-06-23 (10박)",
     "lowest_confidence": "browser_verified",
-    "gap_to_record_pct": 0.8,
+    "gap_to_record_pct": 0.5,
     "sources": {
       "google": {
         "price": 817300,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20BCN%20June%2013%202027%20to%20June%2023%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 1104200,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:BCN-20270613/a:BCN-a:ICN-20270623?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 9개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 793930,
+        "price": 791400,
         "url": "https://www.kayak.co.kr/flights/ICN-BCN/2027-06-13/2027-06-23?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 793930,
+    "prev_checked_price_krw": 791400,
     "lowest_source": "kayak",
     "corroborated": true,
     "lowest_outbound": "2027-06-13",
@@ -1241,12 +1241,12 @@
   "athens": {
     "name_ko": "아테네(그리스)",
     "region": "남유럽",
-    "trip_length_days": 14,
-    "outbound_date": "2027-07-07",
-    "return_date": "2027-07-21",
-    "booking_url": "https://www.kayak.co.kr/flights/ICN-ATH/2027-07-07/2027-07-21?sort=price_a",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 1019000,
+    "trip_length_days": 11,
+    "outbound_date": "2027-08-16",
+    "return_date": "2027-08-27",
+    "booking_url": "https://www.kayak.co.kr/flights/ICN-ATH/2027-08-16/2027-08-27?sort=price_a",
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 1119200,
     "last_checked_confidence": "browser_verified",
     "season_months": [
       3,
@@ -1269,28 +1269,28 @@
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-ATH/2027-06-03/2027-06-15?sort=price_a",
     "lowest_travel_dates": "2027-06-03 ~ 2027-06-15 (12박)",
     "lowest_confidence": "browser_verified",
-    "gap_to_record_pct": 22.3,
+    "gap_to_record_pct": 34.3,
     "sources": {
       "google": {
-        "price": 1104800,
-        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20ATH%20July%207%202027%20to%20July%2021%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 1216643,
+        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20ATH%20August%2016%202027%20to%20August%2027%202027",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
-        "price": 1102331,
-        "url": "https://travel.interpark.com/air/search/a:ICN-a:ATH-20270707/a:ATH-a:ICN-20270721?cabin=ECONOMY&adult=1&child=0&infant=0",
-        "condition": "외 12개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 1251200,
+        "url": "https://travel.interpark.com/air/search/a:ICN-a:ATH-20270816/a:ATH-a:ICN-20270827?cabin=ECONOMY&adult=1&child=0&infant=0",
+        "condition": "외 5개",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 1019000,
-        "url": "https://www.kayak.co.kr/flights/ICN-ATH/2027-07-07/2027-07-21?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 1119200,
+        "url": "https://www.kayak.co.kr/flights/ICN-ATH/2027-08-16/2027-08-27?sort=price_a",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 1019000,
+    "prev_checked_price_krw": 1119200,
     "lowest_source": "kayak",
     "corroborated": true,
     "lowest_outbound": "2027-06-03",
@@ -1300,12 +1300,12 @@
   "dubai": {
     "name_ko": "두바이",
     "region": "중동",
-    "trip_length_days": 4,
-    "outbound_date": "2027-06-29",
-    "return_date": "2027-07-03",
-    "booking_url": "https://www.kayak.co.kr/flights/ICN-DXB/2027-06-29/2027-07-03?sort=price_a",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 957300,
+    "trip_length_days": 6,
+    "outbound_date": "2027-06-18",
+    "return_date": "2027-06-24",
+    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20DXB%20June%2018%202027%20to%20June%2024%202027",
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 923500,
     "last_checked_confidence": "browser_verified",
     "season_months": [
       1,
@@ -1328,28 +1328,28 @@
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-DXB/2027-06-18/2027-06-24?sort=price_a",
     "lowest_travel_dates": "2027-06-18 ~ 2027-06-24 (6박)",
     "lowest_confidence": "browser_verified",
-    "gap_to_record_pct": 103.1,
+    "gap_to_record_pct": 96.0,
     "sources": {
       "google": {
-        "price": 1039000,
-        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20DXB%20June%2029%202027%20to%20July%203%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 923500,
+        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20DXB%20June%2018%202027%20to%20June%2024%202027",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 1000700,
-        "url": "https://travel.interpark.com/air/search/a:ICN-a:DXB-20270629/a:DXB-a:ICN-20270703?cabin=ECONOMY&adult=1&child=0&infant=0",
+        "url": "https://travel.interpark.com/air/search/a:ICN-a:DXB-20270618/a:DXB-a:ICN-20270624?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 8개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 957300,
-        "url": "https://www.kayak.co.kr/flights/ICN-DXB/2027-06-29/2027-07-03?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 972310,
+        "url": "https://www.kayak.co.kr/flights/ICN-DXB/2027-06-18/2027-06-24?sort=price_a",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
-    "best_source": "kayak",
+    "best_source": "google",
     "suspicious": false,
-    "prev_checked_price_krw": 957300,
+    "prev_checked_price_krw": 923500,
     "lowest_source": "kayak",
     "lowest_outbound": "2027-06-18",
     "lowest_return": "2027-06-24",
@@ -1359,11 +1359,11 @@
   "maldives": {
     "name_ko": "몰디브",
     "region": "남아시아",
-    "trip_length_days": 5,
-    "outbound_date": "2027-06-29",
-    "return_date": "2027-07-04",
-    "booking_url": "https://www.kayak.co.kr/flights/ICN-MLE/2027-06-29/2027-07-04?sort=price_a",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
+    "trip_length_days": 8,
+    "outbound_date": "2027-08-08",
+    "return_date": "2027-08-16",
+    "booking_url": "https://www.kayak.co.kr/flights/ICN-MLE/2027-08-08/2027-08-16?sort=price_a",
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
     "last_checked_price_krw": 1036700,
     "last_checked_confidence": "browser_verified",
     "season_months": [
@@ -1390,20 +1390,20 @@
     "gap_to_record_pct": 30.1,
     "sources": {
       "google": {
-        "price": 1526400,
-        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20MLE%20June%2029%202027%20to%20July%204%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 1397700,
+        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20MLE%20August%208%202027%20to%20August%2016%202027",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 1178500,
-        "url": "https://travel.interpark.com/air/search/a:ICN-a:MLE-20270629/a:MLE-a:ICN-20270704?cabin=ECONOMY&adult=1&child=0&infant=0",
+        "url": "https://travel.interpark.com/air/search/a:ICN-a:MLE-20270808/a:MLE-a:ICN-20270816?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 12개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
         "price": 1036700,
-        "url": "https://www.kayak.co.kr/flights/ICN-MLE/2027-06-29/2027-07-04?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "url": "https://www.kayak.co.kr/flights/ICN-MLE/2027-08-08/2027-08-16?sort=price_a",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
@@ -1422,7 +1422,7 @@
     "outbound_date": "2027-07-07",
     "return_date": "2027-07-11",
     "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20HKT%20July%207%202027%20to%20July%2011%202027",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
     "last_checked_price_krw": 425732,
     "last_checked_confidence": "browser_verified",
     "season_months": [
@@ -1451,18 +1451,18 @@
       "google": {
         "price": 425732,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20HKT%20July%207%202027%20to%20July%2011%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 505100,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:HKT-20270707/a:HKT-a:ICN-20270711?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 8개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 441368,
+        "price": 442999,
         "url": "https://www.kayak.co.kr/flights/ICN-HKT/2027-07-07/2027-07-11?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "google",
@@ -1477,12 +1477,12 @@
   "krabi": {
     "name_ko": "끄라비",
     "region": "태국",
-    "trip_length_days": 6,
-    "outbound_date": "2027-08-03",
-    "return_date": "2027-08-09",
-    "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20KBV%20August%203%202027%20to%20August%209%202027",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 442226,
+    "trip_length_days": 5,
+    "outbound_date": "2027-06-09",
+    "return_date": "2027-06-14",
+    "booking_url": "https://www.kayak.co.kr/flights/ICN-KBV/2027-06-09/2027-06-14?sort=price_a",
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 483500,
     "last_checked_confidence": "browser_verified",
     "season_months": [
       1,
@@ -1505,28 +1505,28 @@
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-KBV/2027-06-09/2027-06-14?sort=price_a",
     "lowest_travel_dates": "2027-06-09 ~ 2027-06-14 (5박)",
     "lowest_confidence": "browser_verified",
-    "gap_to_record_pct": 26.0,
+    "gap_to_record_pct": 37.7,
     "sources": {
       "google": {
-        "price": 442226,
-        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20KBV%20August%203%202027%20to%20August%209%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 589666,
+        "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20KBV%20June%209%202027%20to%20June%2014%202027",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
-        "price": 467300,
-        "url": "https://travel.interpark.com/air/search/a:ICN-a:KBV-20270803/a:KBV-a:ICN-20270809?cabin=ECONOMY&adult=1&child=0&infant=0",
+        "price": 495900,
+        "url": "https://travel.interpark.com/air/search/a:ICN-a:KBV-20270609/a:KBV-a:ICN-20270614?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 8개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 454100,
-        "url": "https://www.kayak.co.kr/flights/ICN-KBV/2027-08-03/2027-08-09?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "price": 483500,
+        "url": "https://www.kayak.co.kr/flights/ICN-KBV/2027-06-09/2027-06-14?sort=price_a",
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
-    "best_source": "google",
+    "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 442226,
+    "prev_checked_price_krw": 483500,
     "lowest_source": "kayak",
     "corroborated": true,
     "lowest_outbound": "2027-06-09",
@@ -1540,8 +1540,8 @@
     "outbound_date": "2027-06-12",
     "return_date": "2027-06-17",
     "booking_url": "https://www.kayak.co.kr/flights/ICN-BKI/2027-06-12/2027-06-17?sort=price_a",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 336493,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 337617,
     "last_checked_confidence": "browser_verified",
     "season_months": [
       2,
@@ -1564,28 +1564,28 @@
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-BKI/2027-06-12/2027-06-17?sort=price_a",
     "lowest_travel_dates": "2027-06-12 ~ 2027-06-17 (5박)",
     "lowest_confidence": "browser_verified",
-    "gap_to_record_pct": 31.6,
+    "gap_to_record_pct": 32.0,
     "sources": {
       "google": {
         "price": 345440,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20BKI%20June%2012%202027%20to%20June%2017%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 555900,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:BKI-20270612/a:BKI-a:ICN-20270617?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 9개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 336493,
+        "price": 337617,
         "url": "https://www.kayak.co.kr/flights/ICN-BKI/2027-06-12/2027-06-17?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 336493,
+    "prev_checked_price_krw": 337617,
     "lowest_source": "kayak",
     "corroborated": true,
     "lowest_outbound": "2027-06-12",
@@ -1599,8 +1599,8 @@
     "outbound_date": "2027-06-10",
     "return_date": "2027-06-14",
     "booking_url": "https://www.kayak.co.kr/flights/ICN-CXR/2027-06-10/2027-06-14?sort=price_a",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 269001,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 269081,
     "last_checked_confidence": "browser_verified",
     "season_months": [
       1,
@@ -1628,23 +1628,23 @@
       "google": {
         "price": 285349,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20CXR%20June%2010%202027%20to%20June%2014%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 368800,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:CXR-20270610/a:CXR-a:ICN-20270614?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 7개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 269001,
+        "price": 269081,
         "url": "https://www.kayak.co.kr/flights/ICN-CXR/2027-06-10/2027-06-14?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 269001,
+    "prev_checked_price_krw": 269081,
     "lowest_source": "kayak",
     "corroborated": true,
     "lowest_outbound": "2027-06-10",
@@ -1658,7 +1658,7 @@
     "outbound_date": "2027-06-05",
     "return_date": "2027-06-09",
     "booking_url": "https://www.kayak.co.kr/flights/ICN-PQC/2027-06-05/2027-06-09?sort=price_a",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
     "last_checked_price_krw": 265201,
     "last_checked_confidence": "browser_verified",
     "season_months": [
@@ -1687,18 +1687,18 @@
       "google": {
         "price": 282219,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20PQC%20June%205%202027%20to%20June%209%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 366100,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:PQC-20270605/a:PQC-a:ICN-20270609?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 7개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
         "price": 265201,
         "url": "https://www.kayak.co.kr/flights/ICN-PQC/2027-06-05/2027-06-09?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
@@ -1717,7 +1717,7 @@
     "outbound_date": "2027-06-11",
     "return_date": "2027-06-15",
     "booking_url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20KLO%20June%2011%202027%20to%20June%2015%202027",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
     "last_checked_price_krw": 403200,
     "last_checked_confidence": "browser_verified",
     "season_months": [
@@ -1746,15 +1746,15 @@
       "google": {
         "price": 403200,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20KLO%20June%2011%202027%20to%20June%2015%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
-        "failed_at": "2026-10-19T18:00:01+09:00"
+        "failed_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 453900,
+        "price": 453800,
         "url": "https://www.kayak.co.kr/flights/ICN-KLO/2027-06-11/2027-06-15?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "google",
@@ -1773,8 +1773,8 @@
     "outbound_date": "2027-06-04",
     "return_date": "2027-06-11",
     "booking_url": "https://www.kayak.co.kr/flights/ICN-GUM/2027-06-04/2027-06-11?sort=price_a",
-    "last_checked_at": "2026-10-19T18:00:01+09:00",
-    "last_checked_price_krw": 621200,
+    "last_checked_at": "2026-10-19T21:00:01+09:00",
+    "last_checked_price_krw": 620615,
     "last_checked_confidence": "browser_verified",
     "season_months": [
       1,
@@ -1797,28 +1797,28 @@
     "lowest_source_url": "https://www.kayak.co.kr/flights/ICN-GUM/2027-06-04/2027-06-11?sort=price_a",
     "lowest_travel_dates": "2027-06-04 ~ 2027-06-11 (7박)",
     "lowest_confidence": "browser_verified",
-    "gap_to_record_pct": 26.5,
+    "gap_to_record_pct": 26.4,
     "sources": {
       "google": {
         "price": 633200,
         "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20ICN%20to%20GUM%20June%204%202027%20to%20June%2011%202027",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "interpark": {
         "price": 623200,
         "url": "https://travel.interpark.com/air/search/a:ICN-a:GUM-20270604/a:GUM-a:ICN-20270611?cabin=ECONOMY&adult=1&child=0&infant=0",
         "condition": "외 9개",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       },
       "kayak": {
-        "price": 621200,
+        "price": 620615,
         "url": "https://www.kayak.co.kr/flights/ICN-GUM/2027-06-04/2027-06-11?sort=price_a",
-        "checked_at": "2026-10-19T18:00:01+09:00"
+        "checked_at": "2026-10-19T21:00:01+09:00"
       }
     },
     "best_source": "kayak",
     "suspicious": false,
-    "prev_checked_price_krw": 621200,
+    "prev_checked_price_krw": 620615,
     "lowest_source": "kayak",
     "corroborated": true,
     "lowest_outbound": "2027-06-04",
