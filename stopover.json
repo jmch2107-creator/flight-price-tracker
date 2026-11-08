@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-08T12:00:01+09:00",
+  "checked_at": "2026-11-08T15:00:01+09:00",
   "nights_egypt": 3,
   "nights_eu": 9,
   "options": {
@@ -30,7 +30,7 @@
     },
     "rome": {
       "city": "로마",
-      "total": 1613077,
+      "total": 1685267,
       "lowest_total": 1544547,
       "legs": [
         {
@@ -48,7 +48,7 @@
         {
           "label": "로마 → 인천",
           "date": "2027-06-13",
-          "price": 747354,
+          "price": 819544,
           "url": "https://www.google.com/travel/flights?hl=ko&gl=KR&curr=KRW&q=Flights%20from%20FCO%20to%20ICN%20one%20way%20June%2013%202027"
         }
       ]
